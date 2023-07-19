@@ -6,10 +6,35 @@ The simplest way to evaluate javascript is through your browser's console.
 
 ## Variables
 
+For the duration of this course, we shall avoid using `var` to declare variables and prefer to use `let` and `const` instead.
+
 ```js
-const foo = 27
-const bar = 'literal'
-const baz = true
+const foo = 27;
+const bar = 'literal';
+const baz = true;
+```
+
+### `const`
+
+We can use the `const` keyword to declare constant variables.
+
+These variables cannot be reassigned, and should be used for constant values wherever possible.
+
+```js
+const foo = 'hello';
+foo = 'bye';  // Uncaught TypeError: Assignment to constant variable.
+```
+
+### `let`
+
+The `let` keyword declares a reassignable variable.
+
+These variables can be reassigned
+
+```js
+let foo = 'hello';
+foo = 'bye';
+console.log(foo);  // bye
 ```
 
 ## `console.log`
@@ -27,13 +52,62 @@ When the interpreter encounters `//`, its contents will be ignored.
 Arrays in javascript are denoted with square brackets `[]`
 
 ```js
-const xs = [1, 2, 3]
+const xs = [1, 2, 3];
 ```
 
-We may append additional elements with the `push` method
+### Mutating the array
+
+We may append additional elements to the back with the `push` method
 
 ```js
-const xs = [1, 2, 3]
-xs.push(4)  // adds an element at the back of the list
-console.log(xs)  // [1, 2, 3, 4]
+const xs = [1, 2, 3];
+xs.push(4);  // adds an element at the back of the list
+console.log(xs);  // [1, 2, 3, 4]
 ```
+
+We may also insert elements to the front with the `unshift` method
+
+```js
+const xs = [1, 2, 3];
+xs.unshift(4);  // adds an element to the front of the list
+console.log(xs);  // [4, 1, 2, 3]
+```
+
+Alternatively, we can simply create a new array and use that instead
+
+```js
+const xs = [1, 2, 3];
+const ys = [...xs, 4];
+```
+
+## Functions
+
+```js
+function identity(x) {
+    return x
+}
+identity(27);
+```
+
+Alternatively, we may also use ES6 arrow functions as well.
+
+```js
+const identity = (x) => {
+    return x
+}
+identity(42);
+```
+
+## Modifying DOM elements
+
+## Event listeners
+
+
+
+# Appendix
+
+## Semicolons `;`
+
+Do note that semicolons are optional.
+
+You are encouraged to place them at the end of each line, but omitting them will not be penalised.

@@ -70,4 +70,35 @@ ID-CLASS-TYPE
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
+## Linking external stylesheets
 
+The CSS we write can be separated onto a different file.
+
+`index.html`
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello world!</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <p>The Road Not Taken</p>
+            <p>By Robert Frost</p>
+            <p>Two roads diverged in a yellow wood,</p>
+            <p>And sorry I could not travel both</p>
+            <p>And be one traveler, long I stood</p>
+            <p>And looked down one as far as I could</p>
+            <p>To where it bent in the undergrowth;</p>
+        </section>
+    </body>
+</html>
+```
+
+`main.css`
+```css
+p {
+    display: none;
+}
+```

@@ -12,6 +12,7 @@ The HTML/CSS/JS code that we have needs to be run on a browser.
 
 At a very minimum, we need the HTML document to exist in order to show anything to the user.
 
+`index.html`
 ```html
 <!DOCTYPE html>
 <html>
@@ -23,6 +24,8 @@ At a very minimum, we need the HTML document to exist in order to show anything 
     </body>
 </html>
 ```
+
+Save the file as `index.html` and view its contents in a browser.
 
 ## DOCTYPE
 
@@ -51,6 +54,8 @@ https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML
 ## Rendering elements
 
 When the browser encounters an element, it will render the element according to its HTML specification.
+
+(do note that the rest of the HTML elements have been omitted for brevity)
 
 ```html
 <article>
@@ -143,7 +148,17 @@ This is usually rendered on the browser as a blue hyperlink, clicking on which w
 
 ### Element attributes
 
-An element can contain additional information in the form 
+An element can contain additional information in the form of attributes.
+
+We may view what attributes an element contains by viewing its documentation.
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes
+
+When reading about the attributes
+
+```html
+<a href="https://www.np.edu.sg/" target="_blank">Ngee Ann Poly Homepage</a>
+```
 
 ## Void elements
 
@@ -159,9 +174,36 @@ Void elements will consist of only a single tag.
 
 https://developer.mozilla.org/en-US/docs/Glossary/Void_element
 
+## Comments
+
+We can indicate a comment using the opening tag `<!--` and closing tag `-->`.
+
+Everything between them will be not be rendered by the browser.
+
+```html
+<ol>
+  <!-- List of courses -->
+  <li>Cybersecurity & Digital Forensics (CSF)</li>
+  <li>Data Science</li>
+  <li>Immersive Media</li>
+  <li>Information Technology</li>
+</ol>
+```
+
+When using VSCode, we may turn the selected line(s) into a comment by pressing
+
+(windows) - ctrl + /
+(macOS) - cmd + /
+
 # Appendix
 
 These are things that are useful/cool to know but should not be covered without sufficient time
+
+## `index.html`
+
+When a webserver serves files, it usually looks for a file named `index.html` and serves that first.
+
+`https://example.com` -> `https://example.com/index.html`
 
 ## Invalid HTML
 
@@ -193,4 +235,16 @@ Hello world!
 <h2>Bye
 ```
 
-These types of HTML documents do not conform to the HTML standard, but the browser will still try to render them. Since there is not specification on how to render them, the behaviour is non-deterministic and can vary across different browsers.
+Some parts of the HTML documents do not conform to the HTML standard, but the browser will still try to render them. Since there is no specification on how to render them, the behaviour is non-deterministic and can vary across different browsers.
+
+We may check the validity of HTML documents with W3C's HTML validator service
+
+https://validator.w3.org/
+
+https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwww.tech.gov.sg%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.np.edu.sg%2F
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attributes
+
+https://developer.mozilla.org/en-US/docs/Glossary/Void_element#self-closing_tags
