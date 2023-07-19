@@ -10,14 +10,15 @@ We may style HTML elements by specifying properties like the font, colours, layo
 <style>
     section {
         text-align: center;
+        border: 1px solid black;
     }
     p {
         color: blue;
     }
 </style>
 <section>
-    <p>The Road Not Taken</p>
-    <p>By Robert Frost</p>
+    <h1>The Road Not Taken</h1>
+    <h5>By Robert Frost</h5>
     <p>Two roads diverged in a yellow wood,</p>
     <p>And sorry I could not travel both</p>
     <p>And be one traveler, long I stood</p>
@@ -26,7 +27,15 @@ We may style HTML elements by specifying properties like the font, colours, layo
 </section>
 ```
 
-## Targeting specific elements
+CSS code is written in the form of rulesets.
+
+Each ruleset consists of the selector, with one or more properties declared within the {curly braces}.
+
+For each property, we specify the name of the property followed by a colon `:` and the property value we want to assign.
+
+Lastly, each declaration within the ruleset should be terminated with a semicolon `;`.
+
+## Different types of selectors
 
 ```html
 <style>
@@ -35,8 +44,8 @@ We may style HTML elements by specifying properties like the font, colours, layo
     }
 </style>
 <section>
-    <p id="title">The Road Not Taken</p>
-    <p id="author">By Robert Frost</p>
+    <h1 id="title">The Road Not Taken</h1>
+    <h5 id="author">By Robert Frost</h5>
     <p class="stanza">Two roads diverged in a yellow wood,</p>
     <p class="stanza">And sorry I could not travel both</p>
     <p class="stanza">And be one traveler, long I stood</p>
@@ -70,7 +79,7 @@ ID-CLASS-TYPE
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
-## Linking external stylesheets
+## Linking external styles
 
 The CSS we write can be separated onto a different file.
 
@@ -84,8 +93,8 @@ The CSS we write can be separated onto a different file.
     </head>
     <body>
         <section>
-            <p>The Road Not Taken</p>
-            <p>By Robert Frost</p>
+            <h1>The Road Not Taken</h1>
+            <h5>By Robert Frost</h5>
             <p>Two roads diverged in a yellow wood,</p>
             <p>And sorry I could not travel both</p>
             <p>And be one traveler, long I stood</p>
@@ -98,7 +107,42 @@ The CSS we write can be separated onto a different file.
 
 `main.css`
 ```css
-p {
-    display: none;
+section {
+    text-align: center;
+}
+```
+
+### Linking fonts from the internet
+
+`index.html`
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello world!</title>
+        <link href="main.css" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <section>
+            <h1>The Road Not Taken</h1>
+            <h5>By Robert Frost</h5>
+            <p>Two roads diverged in a yellow wood,</p>
+            <p>And sorry I could not travel both</p>
+            <p>And be one traveler, long I stood</p>
+            <p>And looked down one as far as I could</p>
+            <p>To where it bent in the undergrowth;</p>
+        </section>
+    </body>
+</html>
+```
+
+`main.css`
+```css
+section {
+    text-align: center;
+    font-family: "Open Sans";
 }
 ```

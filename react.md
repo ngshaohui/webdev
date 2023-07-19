@@ -40,6 +40,17 @@ npm start
 
 It should automatically open the page `http://localhost:3000` in your browser.
 
+If you encounter an error where `package.json` could not be read, it is likely that you are running the command in the wrong directory.
+
+```
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path C:\Users\nsh8\Documents\webdev\package.json
+npm ERR! errno -4058
+npm ERR! enoent Could not read package.json: Error: ENOENT: no such file or directory, open 'C:\Users\nsh8\Documents\webdev\package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+```
+
 ## Stopping the project
 
 At anytime we wish to stop running the development server, we can do so with
@@ -150,11 +161,11 @@ https://react.dev/reference/react/Fragment
 import './App.css';
 
 function App() {
-  const name = "Your name here"
+  const name = "Charles"
   return (
-    <div className="App">
+    <section>
       Hello my name is {name}
-    </div>
+    </section>
   );
 }
 
@@ -185,11 +196,11 @@ function Greet() {
 
 function App() {
   return (
-    <div className="App">
+    <section>
       <Greet />
       <Greet />
       <Greet />
-    </div>
+    </section>
   );
 }
 
@@ -214,11 +225,11 @@ function Greet(name) {
 
 function App() {
   return (
-    <div className="App">
+    <section>
       <Greet name="Alice" />
       <Greet name="Bob" />
       <Greet name="Charles" />
-    </div>
+    </section>
   );
 }
 
