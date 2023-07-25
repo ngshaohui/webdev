@@ -2,11 +2,13 @@
 
 Javascript (JS) is an interpreted language. Unlike languages like C where code is first compiled into machine code before execution, JS does not need to be compiled and should be run using an interpreter instead. This is similar to interpreted languages like Python.
 
-The simplest way to evaluate javascript is through your browser's console.
+The simplest way to evaluate JS is through your browser's console.
+
+Each browser comes with a JS engine to allow a webpage to execute Javascript.
 
 ## Variables
 
-For the duration of this course, we shall avoid using `var` to declare variables and prefer to use `let` and `const` instead.
+For the duration of this course, we shall avoid using `var` to declare variables and opt to use `let` and `const` instead.
 
 ```js
 const foo = 27;
@@ -98,16 +100,10 @@ const identity = (x) => {
 identity(42);
 ```
 
-## Modifying DOM elements
-
-## Event listeners
-
-
-
 # Appendix
 
 ## Semicolons `;`
 
 Do note that semicolons are optional.
 
-You are encouraged to place them at the end of each line, but omitting them will not be penalised.
+You are encouraged to place them at the end of each line, but omitting them is acceptable.
