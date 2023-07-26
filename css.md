@@ -146,3 +146,17 @@ section {
     font-family: "Open Sans";
 }
 ```
+
+## Choosing colors
+
+While the artistic design of webpages is out of scope for this course, we can generally rely on a number of color palette generation sites as a starting point.
+
+One such site is Color Hunt, a free website that offers a number of curated color palettes that can be themed around a particular color.
+
+https://colorhunt.co/
+
+Another website is Coolers, a site that also has color palette generation capabilities for free, but also comes with a number of paywalled features.
+
+https://coolors.co/
+
+This saves us the time of having to think about what colors go together, saving us from overly plain websites or clashing color schemes.

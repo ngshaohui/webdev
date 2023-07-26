@@ -246,5 +246,3 @@ https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwww.tech.gov.sg%2F
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.np.edu.sg%2F
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attributes
-
-https://developer.mozilla.org/en-US/docs/Glossary/Void_element#self-closing_tags
