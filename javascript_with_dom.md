@@ -18,14 +18,17 @@ JS's capability of making pages update dynamically stems from its ability to man
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Hello world!</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <section>
-      <h1>Hello world!</h1>
+        <h1>Hello world!</h1>
     </section>
-  </body>
+</body>
+
 </html>
 ```
 
@@ -41,33 +44,36 @@ myHeading.textContent = "Bye everyone!";
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Hello world!</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <section>
-      <button>Change color</button>
+        <button>Change color</button>
     </section>
     <script>
-      const btn = document.querySelector("button");
+        const btn = document.querySelector("button");
 
-      /**
-       * Returns a random number from 0 to the given upper limit
-       *
-       * @param {number} upperLimit The maximum range
-       * @return {number} The randomly selected number
-       */
-      function random(upperLimit) {
-        return Math.floor(Math.random() * (upperLimit + 1));
-      }
+        /**
+         * Returns a random number from 0 to the given upper limit
+         *
+         * @param {number} upperLimit The maximum range
+         * @return {number} The randomly selected number
+         */
+        function random(upperLimit) {
+            return Math.floor(Math.random() * (upperLimit + 1));
+        }
 
-      btn.addEventListener("click", function() {
-        // change webpage's background to a random color
-        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-        document.body.style.backgroundColor = rndCol;
-      });
+        btn.addEventListener("click", function () {
+            // change webpage's background to a random color
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+        });
     </script>
-  </body>
+</body>
+
 </html>
 ```
 
@@ -170,15 +176,18 @@ Let us try to separate the JS we have written into a separate file, and load it 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Hello world!</title>
     <script src="color.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <section>
-      <button>Change color</button>
+        <button>Change color</button>
     </section>
-  </body>
+</body>
+
 </html>
 ```
 
@@ -187,18 +196,18 @@ Let us try to separate the JS we have written into a separate file, and load it 
 const btn = document.querySelector("button");
 
 /**
- * Returns a random number from 0 to the given upper limit
- *
- * @param {number} upperLimit The maximum range
- * @return {number} The randomly selected number
- */
+* Returns a random number from 0 to the given upper limit
+*
+* @param {number} upperLimit The maximum range
+* @return {number} The randomly selected number
+*/
 function random(upperLimit) {
-  return Math.floor(Math.random() * (upperLimit + 1));
+return Math.floor(Math.random() * (upperLimit + 1));
 }
 
 btn.addEventListener("click", function() {
-  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-  document.body.style.backgroundColor = rndCol;
+const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+document.body.style.backgroundColor = rndCol;
 });
 ```
 

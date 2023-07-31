@@ -12,6 +12,8 @@ The HTML/CSS/JS code that we have needs to be run on a browser.
 
 At a very minimum, we need the HTML document to exist in order to show anything to the user.
 
+## Minimal HTML document
+
 `index.html`
 ```html
 <!DOCTYPE html>
@@ -27,7 +29,7 @@ At a very minimum, we need the HTML document to exist in order to show anything 
 
 Save the file as `index.html` and view its contents in a browser.
 
-## DOCTYPE
+### DOCTYPE
 
 A HTML document is rendered by the browser from the top to the bottom.
 
@@ -37,7 +39,7 @@ https://developer.mozilla.org/en-US/docs/Glossary/Doctype
 
 (chances are that the HTML document will still be rendered correctly without it, but we should make it a good habit to include it since it's part of the specification)
 
-## Elements
+### Elements
 
 A HTML document is made up of elements.
 
@@ -121,20 +123,22 @@ Here are some commonly used elements you're likely to encounter:
 
 We can use lists to denote a series of items.
 
-Depending on our requirements, lists can be ordered or unordered.
-
 ```html
-<p>Courses available</p>
+<article>
+    <h1>Courses available</h1>
 
-<ol>
-  <li>Cybersecurity & Digital Forensics (CSF)</li>
-  <li>Data Science</li>
-  <li>Immersive Media</li>
-  <li>Information Technology</li>
-</ol>
+    <ol>
+        <li>Cybersecurity & Digital Forensics (CSF)</li>
+        <li>Data Science</li>
+        <li>Immersive Media</li>
+        <li>Information Technology</li>
+    </ol>
+</article>
 ```
 
 The list is indicated by the unordered list element `ul`, which nests several list items `li`.
+
+Depending on our requirements, lists can be ordered or unordered.
 
 ## Anchor elements
 
@@ -145,6 +149,30 @@ This is usually rendered on the browser as a blue hyperlink, clicking on which w
 ```html
 <a href="https://www.np.edu.sg/">Ngee Ann Poly Homepage</a>
 ```
+
+## Media
+
+Images need the `src` attribute to specify where the image can be found.
+
+<img src="images/cat.jpg">
+
+They can also come with an `alt` attribute, which is a textual description of what the image is.
+
+<img src="images/cat.jpg" alt="cat lying in the rain gutter">
+
+We can also specify the `height` and `width` of our images via the attribute.
+
+<img src="images/cat.jpg" alt="cat lying in the rain gutter" height="400" width="600">
+
+### External sources
+
+The `src` for an image can also point to an image hosted on a different server.
+
+<img src="https://placekitten.com/g/200/300">
+
+This is most often done via a Content Delivery Network (CDN) to host the image on an edge server to users to download images faster.
+
+However, this is generally avoided if we do not own the external server as this means that malicious content could potentially be served.
 
 ### Element attributes
 
