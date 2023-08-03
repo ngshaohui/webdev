@@ -79,6 +79,62 @@ ID-CLASS-TYPE
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
+## Data attributes
+
+HTML elements can be extended with the use of custom data attributes.
+
+Custom attributes need to be prefixed with the keyword `data-` followed by a lowercase hyphen-separated string.
+
+```html
+<img src="images/bear.png" class="product-image" data-product-id="TOY34120" data-size="large">
+```
+
+This allows us to create more extensible CSS specifiers for our elements.
+
+```html
+<style>
+    .btn {
+        border: 1px solid;
+        padding: 16px;
+        border-radius: 24px;
+    }
+
+    .btn[data-colo="primary"] {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .btn[data-colo="danger"] {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn[data-size="medium"] {
+        font-size: 16px;
+    }
+
+    .btn[data-size="large"] {
+        font-size: 24px;
+    }
+</style>
+<button class="btn" data-colo="primary" data-size="large">Submit</button>
+<button class="btn" data-colo="danger" data-size="medium">Delete</button>
+```
+
+The alternative to using data attributes will be to compose multiple CSS class names in a single element.
+
+```html
+<button class="btn btn-danger btn-medium" type="button">Danger</button>
+```
+
+Both methods will work, but feel free to use one over the other if it conveys better clarity.
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+
+TODO: CSS specifier score?
+
 ## Linking external styles
 
 The CSS we write can be separated onto a different file.

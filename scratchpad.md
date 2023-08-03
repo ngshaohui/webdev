@@ -1,3 +1,7 @@
+# Scratchpad
+
+Scratchpad contains ideas to be incorporated into the lessons, but not sure where to park them under yet.
+
 ## Accessibility
 
 An often neglected area of websites is making them more accessible to people with disabilities.
@@ -101,3 +105,7 @@ By looking at the `srcset` attribute, we can see that they also serve smaller ve
 We can take the highest resolution image, which should be the one that they are using in the `src` attribute.
 
 https://www.instagram.com/p/CeDByWyAaQa/
+
+## Assignment for CSS
+
+Calculate CSS specifiers score

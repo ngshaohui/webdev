@@ -150,7 +150,32 @@ This is usually rendered on the browser as a blue hyperlink, clicking on which w
 <a href="https://www.np.edu.sg/">Ngee Ann Poly Homepage</a>
 ```
 
-## Media
+### Element attributes
+
+An element can contain additional information in the form of attributes.
+
+```html
+<a href="https://www.np.edu.sg/" target="_blank">Ngee Ann Poly Homepage</a>
+```
+
+We may view what attributes an element contains by viewing its documentation.
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes
+
+Also listed in the documentation will be "Deprecated attributes", which are not to be used at all under any circumstances.
+
+We should also note that each element also has "Global attributes", which are common attributes shared by all elements.
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+
+Some examples are `id` and `class`, which allows us to specify a unique or group identifier for our elements to be selected with CSS and JS.
+
+```html
+<li id="csf" class="course-item">Cybersecurity & Digital Forensics (CSF)</li>
+<li id="ds" class="course-item">Data Science</li>
+```
+
+## Images
 
 Images need the `src` attribute to specify where the image can be found.
 
@@ -174,19 +199,29 @@ This is most often done via a Content Delivery Network (CDN) to host the image o
 
 However, this is generally avoided if we do not own the external server as this means that malicious content could potentially be served.
 
-### Element attributes
+## Iframe
 
-An element can contain additional information in the form of attributes.
+An `iframe` allows us to link content from another website.
 
-We may view what attributes an element contains by viewing its documentation.
+This saves the need for the user to be redirected to another page to view content or perform a particular interaction.
 
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes
+Social media sites might do this to allow them to share a post without having to go on the site itself, such as Facebook or Twitter.
 
-When reading about the attributes
+Another example would be sites that want to provide widget functionalities.
+
+### Google Maps
 
 ```html
-<a href="https://www.np.edu.sg/" target="_blank">Ngee Ann Poly Homepage</a>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7375391053556!2d103.77216097602195!3d1.3336435616255482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107d87883dd1%3A0xc4d6ef954bf5163d!2sSchool%20of%20Infocomm%20Technology!5e0!3m2!1sen!2ssg!4v1691047013782!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 ```
+
+### Youtube
+
+```html
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+TODO: talk about how youtube doesn't allow the embedded iframe to be served from the local file
 
 ## Void elements
 
@@ -226,6 +261,12 @@ When using VSCode, we may turn the selected line(s) into a comment by pressing
 # Appendix
 
 These are things that are useful/cool to know but should not be covered without sufficient time
+
+## Other forms of media
+
+Other than images, various other forms of media can be embedded such as video and audio.
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content
 
 ## `index.html`
 
