@@ -12,7 +12,7 @@ For the duration of this course, we shall avoid using `var` to declare variables
 
 ```js
 const foo = 27;
-const bar = 'literal';
+const bar = "literal";
 const baz = true;
 ```
 
@@ -23,8 +23,8 @@ We can use the `const` keyword to declare constant variables.
 These variables cannot be reassigned, and should be used for constant values wherever possible.
 
 ```js
-const foo = 'hello';
-foo = 'bye';  // Uncaught TypeError: Assignment to constant variable.
+const foo = "hello";
+foo = "bye"; // Uncaught TypeError: Assignment to constant variable.
 ```
 
 ### `let`
@@ -34,9 +34,9 @@ The `let` keyword declares a reassignable variable.
 These variables can be reassigned
 
 ```js
-let foo = 'hello';
-foo = 'bye';
-console.log(foo);  // bye
+let foo = "hello";
+foo = "bye";
+console.log(foo); // bye
 ```
 
 ## `console.log`
@@ -63,16 +63,16 @@ We may append additional elements to the back with the `push` method
 
 ```js
 const xs = [1, 2, 3];
-xs.push(4);  // adds an element at the back of the list
-console.log(xs);  // [1, 2, 3, 4]
+xs.push(4); // adds an element at the back of the list
+console.log(xs); // [1, 2, 3, 4]
 ```
 
 We may also insert elements to the front with the `unshift` method
 
 ```js
 const xs = [1, 2, 3];
-xs.unshift(4);  // adds an element to the front of the list
-console.log(xs);  // [4, 1, 2, 3]
+xs.unshift(4); // adds an element to the front of the list
+console.log(xs); // [4, 1, 2, 3]
 ```
 
 Alternatively, we can simply create a new array and use that instead
@@ -86,7 +86,7 @@ const ys = [...xs, 4];
 
 ```js
 function identity(x) {
-    return x
+  return x;
 }
 identity(27);
 ```
@@ -95,8 +95,8 @@ Alternatively, we may also use ES6 arrow functions as well.
 
 ```js
 const identity = (x) => {
-    return x
-}
+  return x;
+};
 identity(42);
 ```
 

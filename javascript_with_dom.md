@@ -15,20 +15,19 @@ JS's capability of making pages update dynamically stems from its ability to man
 ### Changing content of DOM elements
 
 `index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Hello world!</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section>
-        <h1>Hello world!</h1>
+      <h1>Hello world!</h1>
     </section>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -39,41 +38,39 @@ const myHeading = document.querySelector("h1");
 myHeading.textContent = "Bye everyone!";
 ```
 
-### 
+###
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Hello world!</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section>
-        <button>Change color</button>
+      <button>Change color</button>
     </section>
     <script>
-        const btn = document.querySelector("button");
+      const btn = document.querySelector("button");
 
-        /**
-         * Returns a random number from 0 to the given upper limit
-         *
-         * @param {number} upperLimit The maximum range
-         * @return {number} The randomly selected number
-         */
-        function random(upperLimit) {
-            return Math.floor(Math.random() * (upperLimit + 1));
-        }
+      /**
+       * Returns a random number from 0 to the given upper limit
+       *
+       * @param {number} upperLimit The maximum range
+       * @return {number} The randomly selected number
+       */
+      function random(upperLimit) {
+        return Math.floor(Math.random() * (upperLimit + 1));
+      }
 
-        btn.addEventListener("click", function () {
-            // change webpage's background to a random color
-            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-            document.body.style.backgroundColor = rndCol;
-        });
+      btn.addEventListener("click", function () {
+        // change webpage's background to a random color
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      });
     </script>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -94,10 +91,10 @@ While these are still functional and can be used, there is a much newer and elab
 const pElement = document.querySelector("p");
 
 // selecting an element with the class warning
-const warningClassElement = document.querySelector(".warning")
+const warningClassElement = document.querySelector(".warning");
 
 // selecting an element with Id
-const menuBarElement = document.querySelector("#menuBar")
+const menuBarElement = document.querySelector("#menuBar");
 ```
 
 ### Compound queries
@@ -142,7 +139,7 @@ For example, we have seen how to add a `click` event listener to a button to mak
 ```js
 const btn = document.querySelector("button");
 
-btn.addEventListener("click", function() {
+btn.addEventListener("click", function () {
   // change webpage's background to a random color
   const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
   document.body.style.backgroundColor = rndCol;
@@ -158,6 +155,7 @@ For our example of having a `button` that listens to the `click` event:
 Target: `btn`
 Event: `"click"`
 Callback Function:
+
 ```
 function() {
   // change webpage's background to a random color
@@ -173,41 +171,41 @@ The supplied callback function does not execute until the event is fired.
 Let us try to separate the JS we have written into a separate file, and load it in the header.
 
 `index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Hello world!</title>
     <script src="color.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <section>
-        <button>Change color</button>
+      <button>Change color</button>
     </section>
-</body>
-
+  </body>
 </html>
 ```
 
 `color.js`
+
 ```js
 const btn = document.querySelector("button");
 
 /**
-* Returns a random number from 0 to the given upper limit
-*
-* @param {number} upperLimit The maximum range
-* @return {number} The randomly selected number
-*/
+ * Returns a random number from 0 to the given upper limit
+ *
+ * @param {number} upperLimit The maximum range
+ * @return {number} The randomly selected number
+ */
 function random(upperLimit) {
-return Math.floor(Math.random() * (upperLimit + 1));
+  return Math.floor(Math.random() * (upperLimit + 1));
 }
 
-btn.addEventListener("click", function() {
-const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-document.body.style.backgroundColor = rndCol;
+btn.addEventListener("click", function () {
+  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
 });
 ```
 
@@ -231,6 +229,7 @@ Instead of using an existing element as our target, we should attach the event l
 The `document` object serves as an entry point into the DOM tree, so it already exists before the DOM is even loaded.
 
 `color.js`
+
 ```js
 document.addEventListener("DOMContentLoaded", function (event) {
   const btn = document.querySelector("button");
@@ -245,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     return Math.floor(Math.random() * (upperLimit + 1));
   }
 
-  btn.addEventListener("click", function() {
+  btn.addEventListener("click", function () {
     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
     document.body.style.backgroundColor = rndCol;
   });
@@ -259,6 +258,7 @@ Alternatively, this issue with loading order can be resolved by having JS locate
 We can also attach event listeners in the HTML element, rather than first selecting them with the `querySelector` and adding listeners with `addEventListener`.
 
 `index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -276,6 +276,7 @@ We can also attach event listeners in the HTML element, rather than first select
 ```
 
 `main.js`
+
 ```js
 function eggs() {
   alert("Eggs");

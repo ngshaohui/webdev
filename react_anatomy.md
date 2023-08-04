@@ -74,6 +74,7 @@ Key in `y` for yes and press enter to continue in order to stop the development 
 Let us start by taking a look at the `index.html` file.
 
 `learn-react\public\index.html`
+
 ```html
 <div id="root"></div>
 <!--
@@ -95,8 +96,8 @@ Instead, the place that we write code has been moved to the `App.js` file.
 `learn-react\src\App.js`
 
 ```jsx
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -157,16 +158,13 @@ https://react.dev/reference/react/Fragment
 ### Evaluating within JSX
 
 `App.js`
+
 ```jsx
-import './App.css';
+import "./App.css";
 
 function App() {
-  const name = "Charles"
-  return (
-    <section>
-      Hello my name is {name}
-    </section>
-  );
+  const name = "Charles";
+  return <section>Hello my name is {name}</section>;
 }
 
 export default App;
@@ -185,13 +183,12 @@ By working in components, React makes it much easier for us to reuse components.
 Within `App.js` let us define another component `FormField` and use it within the `App` component.
 
 `App.js`
+
 ```jsx
 import "./App.css";
 
 function Greet() {
-  return (
-    <h1>Hello</h1>
-  );
+  return <h1>Hello</h1>;
 }
 
 function App() {
@@ -214,13 +211,12 @@ If we wish to use it multiple times, we can easily just repeat the declaration o
 Similar to how javascript functions can take in arguments, React components can take in properties (props)
 
 `App.js`
+
 ```jsx
 import "./App.css";
 
 function Greet(name) {
-  return (
-    <h1>Hello {name}</h1>
-  );
+  return <h1>Hello {name}</h1>;
 }
 
 function App() {
@@ -239,7 +235,7 @@ export default App;
 This is similar to how HTML elements take in attributes
 
 ```html
-<input placeholder="Age">
+<input placeholder="Age" />
 ```
 
 On top of strings, you can also pass in objects and lists.
