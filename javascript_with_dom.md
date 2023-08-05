@@ -12,6 +12,8 @@ It allows us to update the webpage on the fly, based on our user's interactions.
 (TODO: first time using the word DOM, need to look at introducing it earlier)
 JS's capability of making pages update dynamically stems from its ability to manipulate the DOM elements.
 
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
 ### Changing content of DOM elements
 
 `index.html`

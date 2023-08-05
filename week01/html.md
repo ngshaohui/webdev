@@ -15,15 +15,16 @@ At a very minimum, we need the HTML document to exist in order to show anything 
 ## Minimal HTML document
 
 `index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <p>My cat is very grumpy</p>
-    </body>
+  <head>
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <p>My cat is very grumpy</p>
+  </body>
 </html>
 ```
 
@@ -57,16 +58,19 @@ https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML
 
 When the browser encounters an element, it will render the element according to its HTML specification.
 
+`poem.html`
+
 (do note that the rest of the HTML elements have been omitted for brevity)
 
+<!-- prettier-ignore -->
 ```html
 <article>
-    Two roads diverged in a yellow wood,
-    And sorry I could not travel both
+  Two roads diverged in a yellow wood,
+  And sorry I could not travel both
 </article>
 ```
 
-The 2 lines above appear as a single line despite us using a space to separate it.
+The 2 lines above appear as a single line despite us using a newline to separate it.
 
 This is because the browser sees everything as part of the content of the `article` element, and the default behaviour is to display everything as a single line.
 
@@ -74,8 +78,8 @@ One way we can break up the lines is to use the line break element `br`.
 
 ```html
 <article>
-    Two roads diverged in a yellow wood,<br>
-    And sorry I could not travel both
+  Two roads diverged in a yellow wood,<br />
+  And sorry I could not travel both
 </article>
 ```
 
@@ -85,19 +89,19 @@ Another way to achieve this separation is by using the division container `div`.
 
 ```html
 <article>
-    <div>Two roads diverged in a yellow wood,</div>
-    <div>And sorry I could not travel both</div>
+  <div>Two roads diverged in a yellow wood,</div>
+  <div>And sorry I could not travel both</div>
 </article>
 ```
 
-The division container is used to group elements together, 
+The division container is used to group elements together,
 
 Alternatively, we can encapsulate each line in the paragraph element `p`.
 
 ```html
 <article>
-    <p>Two roads diverged in a yellow wood,</p>
-    <p>And sorry I could not travel both</p>
+  <p>Two roads diverged in a yellow wood,</p>
+  <p>And sorry I could not travel both</p>
 </article>
 ```
 
@@ -113,11 +117,19 @@ Here are some commonly used elements you're likely to encounter:
 
 - `ul`, `ol`
 - `li`
-- `h1`, `h2`, `h3`, `h4`, `h5`
+- `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
 - `a`
 - `img`
 - `input`
 - `table`
+
+## Headers
+
+TODO
+
+## Text formatters
+
+TODO
 
 ## Lists
 
@@ -125,14 +137,14 @@ We can use lists to denote a series of items.
 
 ```html
 <article>
-    <h1>Courses available</h1>
+  <h1>Courses available</h1>
 
-    <ol>
-        <li>Cybersecurity & Digital Forensics (CSF)</li>
-        <li>Data Science</li>
-        <li>Immersive Media</li>
-        <li>Information Technology</li>
-    </ol>
+  <ol>
+    <li>Cybersecurity & Digital Forensics (CSF)</li>
+    <li>Data Science</li>
+    <li>Immersive Media</li>
+    <li>Information Technology</li>
+  </ol>
 </article>
 ```
 
@@ -171,8 +183,12 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
 Some examples are `id` and `class`, which allows us to specify a unique or group identifier for our elements to be selected with CSS and JS.
 
 ```html
-<li id="csf" class="course-item">Cybersecurity & Digital Forensics (CSF)</li>
-<li id="ds" class="course-item">Data Science</li>
+<ol>
+  <li id="csf" class="course-item">Cybersecurity & Digital Forensics (CSF)</li>
+  <li id="ds" class="course-item">Data Science</li>
+  <li id="im" class="course-item">Immersive Media</li>
+  <li id="it" class="course-item">Information Technology</li>
+</ol>
 ```
 
 ## Images
@@ -212,13 +228,29 @@ Another example would be sites that want to provide widget functionalities.
 ### Google Maps
 
 ```html
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7375391053556!2d103.77216097602195!3d1.3336435616255482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107d87883dd1%3A0xc4d6ef954bf5163d!2sSchool%20of%20Infocomm%20Technology!5e0!3m2!1sen!2ssg!4v1691047013782!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7375391053556!2d103.77216097602195!3d1.3336435616255482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107d87883dd1%3A0xc4d6ef954bf5163d!2sSchool%20of%20Infocomm%20Technology!5e0!3m2!1sen!2ssg!4v1691047013782!5m2!1sen!2ssg"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
 ```
 
 ### Youtube
 
 ```html
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 ```
 
 TODO: talk about how youtube doesn't allow the embedded iframe to be served from the local file
@@ -232,7 +264,7 @@ Since they do not contain any content, they do not have any closing tags.
 Void elements will consist of only a single tag.
 
 ```html
-<input type="text">
+<input type="text" />
 ```
 
 https://developer.mozilla.org/en-US/docs/Glossary/Void_element
@@ -282,12 +314,12 @@ Does it render?
 
 ```html
 <html>
-    <head>
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <p>Hello world!</p>
-    </body>
+  <head>
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <p>Hello world!</p>
+  </body>
 </html>
 ```
 
@@ -300,8 +332,10 @@ Hello world!
 ### Missing closing tags
 
 ```html
-<h1>Hello world!
-<h2>Bye
+<h1>
+  Hello world!
+  <h2>Bye</h2>
+</h1>
 ```
 
 Some parts of the HTML documents do not conform to the HTML standard, but the browser will still try to render them. Since there is no specification on how to render them, the behaviour is non-deterministic and can vary across different browsers.
