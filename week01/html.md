@@ -338,6 +338,13 @@ Hello world!
 </h1>
 ```
 
+### Mismatched case
+
+<!-- prettier-ignore -->
+```html
+<H1>Hello world!</h1>
+```
+
 Some parts of the HTML documents do not conform to the HTML standard, but the browser will still try to render them. Since there is no specification on how to render them, the behaviour is non-deterministic and can vary across different browsers.
 
 We may check the validity of HTML documents with W3C's HTML validator service
