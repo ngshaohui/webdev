@@ -37,6 +37,17 @@ For each property, we specify the name of the property followed by a colon `:` a
 
 Lastly, each declaration within the ruleset should be terminated with a semicolon `;`.
 
+## Common properties
+
+- `color`
+- `background-color`
+- `font-size`
+- `font-family`
+- `text-align`
+- `border`
+- `padding`
+- `margin`
+
 ## Different types of selectors
 
 ```html
@@ -71,19 +82,6 @@ Lastly, each declaration within the ruleset should be terminated with a semicolo
 ```
 
 In order to target specific HTML element, we may make use of the `id` and `class` attributes.
-
-## Conflicts
-
-Like HTML, CSS is also read from top to bottom.
-
-```css
-p {
-  color: red;
-}
-p {
-  color: blue;
-}
-```
 
 In the event of a repeated style that targets the exact same elements, a style defined later will overwrite an earlier style.
 
@@ -263,6 +261,107 @@ section:not([id]) {
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
+## Box model
+
+TODO: Check if border and margin are considered as part of an element.
+
+We are able to specify an element's height and width using CSS.
+
+```html
+<style>
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+<div></div>
+```
+
+However, the height and width only determines the size of an element's **content**.
+
+There are 3 other properties that can affect an element's actual size:
+
+1. `padding`
+2. `border`
+3. `margin`
+
+These properties are additional boxes that adds another layer the content.
+
+```html
+<style>
+  .container {
+    border: dotted #333 3px;
+    background-color: mistyrose;
+  }
+  .box {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border: solid black 5px;
+    margin: 20px;
+  }
+  #box1 {
+    background-color: lightgreen;
+  }
+  #box2 {
+    background-color: lightsalmon;
+  }
+</style>
+<div class="container">
+  <div id="box1" class="box"></div>
+  <div id="box2" class="box"></div>
+</div>
+```
+
+### `padding`
+
+The `padding` of an element surrounds the area immediately around the content.
+
+It is used to give space between the current element from the surrounding ones.
+
+### `border`
+
+The `border` of an element comes after the padding.
+
+As the name suggests, it is used to apply a border around the element.
+
+### `margin`
+
+Similar to `padding`, the `margin` property is also used to give space between the current element from the surrounding ones.
+
+However, the margin of an element will overlap with the surrounding element's margin.
+
+### Specific direction
+
+When specifying any of the 3 box properties, it applies it on all 4 surrounding directions.
+
+We may also give a specific direction where we want the property.
+
+```css
+div {
+  padding: 10px 40px; /* top and bottom | left and right (shorthand property) */
+  border-bottom: 10px;
+  margin-top: 20px;
+}
+```
+
+## Display
+
+TODO talk about inline and block elements
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content
+
+Need to point out how we have inline and block elements
+
+## Flexbox
+
+TODO
+
+```html
+
+```
+
 ## Inline style
 
 On top of using stylesheets, it is possible to do inline styling within the HTML element itself.
@@ -301,7 +400,7 @@ Such styles are known as an internal stylesheets.
 
 The CSS we write can also be separated onto a different file, known as an external stylesheet.
 
-`index.html`
+`external-stylesheets.html`
 
 ```html
 <!DOCTYPE html>
@@ -309,6 +408,7 @@ The CSS we write can also be separated onto a different file, known as an extern
   <head>
     <title>Hello world!</title>
     <link href="main.css" rel="stylesheet" />
+    <link href="folder/poem.css" rel="stylesheet" />
   </head>
   <body>
     <section>
@@ -329,6 +429,14 @@ The CSS we write can also be separated onto a different file, known as an extern
 ```css
 section {
   text-align: center;
+}
+```
+
+`folder/poem.css`
+
+```css
+p {
+  font-size: 24px;
 }
 ```
 
@@ -376,9 +484,18 @@ section {
 }
 ```
 
-## Flexbox
+## Conflicts
 
-TODO
+Like HTML, CSS is also read from top to bottom.
+
+```css
+p {
+  color: red;
+}
+p {
+  color: blue;
+}
+```
 
 # Appendix
 
@@ -454,3 +571,34 @@ Both methods will work, but feel free to use one over the other if it conveys be
 https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+
+## Fetching external data with CSS
+
+TODO better example, include example with actual url
+
+Besides specifying colors, it is possible to include a URL to link to an external resource.
+
+```html
+<style>
+  div {
+    height: 200px;
+    width: 200px;
+  }
+  div#first {
+    background: no-repeat left
+      url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII=");
+  }
+  div#second {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII=");
+  }
+</style>
+<div></div>
+<div></div>
+<img
+  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII="
+/>
+```
+
+The above example uses a base64 encoded image as its background.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/url

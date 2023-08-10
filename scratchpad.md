@@ -276,14 +276,10 @@ It mainly boils down to just setinnerhtml and user supplied urls to anchor eleme
 How does react create elements?
 
 ```jsx
-import { createElement } from 'react';
+import { createElement } from "react";
 
 function Greeting({ name }) {
-  return createElement(
-    'h1',
-    { className: 'greeting' },
-    'Hello'
-  );
+  return createElement("h1", { className: "greeting" }, "Hello");
 }
 ```
 
@@ -338,3 +334,19 @@ This is similar to achieving XSS in `appendElement`.
 ### Typescript
 
 ### Server side rendering
+
+## What else can the browser do
+
+(can be discussed when talking about what NodeJS is)
+
+V8 engine is not just capable of running JavaScript, it also runs WebAssembly
+
+https://v8.dev/features
+
+The V8 engine is just one aspect of the browser.
+
+Other than handling HTML, CSS, JS, it also contains codecs to play media files such as mp3, mp4, pdf.
+
+It also has things like password managers and even the ability to sync user session across different devices.
+
+Browsers have evolved to accomplish more than just browsing, capable of accomodating fully featured web applications.
