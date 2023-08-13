@@ -1,0 +1,89 @@
+body {
+  font-family: "Times New Roman", serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #d35400;
+  color: #fff;
+  padding: 18px;
+  text-align: center;
+}
+
+h5+.stanza+.stanza {
+    font-weight: 900;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.button {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 1px;
+  padding-bottom: 2px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.link {
+  color: #8e44ad;
+  text-decoration: none;
+}
+
+.form {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkbox {
+  margin-right: 12px;
+}
+
+.footer {
+  background-color: #95a5a6;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 15px;
+  }
+}

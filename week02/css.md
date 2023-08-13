@@ -263,8 +263,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 ## Box model
 
-TODO: Check if border and margin are considered as part of an element.
-
 We are able to specify an element's height and width using CSS.
 
 ```html
@@ -277,15 +275,30 @@ We are able to specify an element's height and width using CSS.
 <div></div>
 ```
 
-However, the height and width only determines the size of an element's **content**.
+The size of an element depends on the size of its **content**.
 
-There are 3 other properties that can affect an element's actual size:
+However, we have seen that the `p` element appears to have some space around it, compared if we were to use a `div` element.
+
+```html
+<p>Two roads diverged in a yellow wood,</p>
+<p>And sorry I could not travel both</p>
+<div>And be one traveler, long I stood</div>
+<div>And looked down one as far as I could</div>
+```
+
+This is done by drawing an empty margin at its top and bottom.
+
+There are 3 other properties that can help to add space around an element (in this particular order):
 
 1. `padding`
 2. `border`
 3. `margin`
 
-These properties are additional boxes that adds another layer the content.
+Together with the element, they makes up the CSS box model.
+
+These properties makes it easier to read, as well as distinguish different elements from each other.
+
+`box-model.html`
 
 ```html
 <style>
@@ -323,7 +336,7 @@ It is used to give space between the current element from the surrounding ones.
 
 The `border` of an element comes after the padding.
 
-As the name suggests, it is used to apply a border around the element.
+As the name suggests, it is used to apply a border around the element, after the padding has been applied.
 
 ### `margin`
 
@@ -335,19 +348,21 @@ However, the margin of an element will overlap with the surrounding element's ma
 
 When specifying any of the 3 box properties, it applies it on all 4 surrounding directions.
 
+As we have seen in the case of the `p` element, we can choose to apply box properties in a specific direction.
+
 We may also give a specific direction where we want the property.
 
 ```css
 div {
   padding: 10px 40px; /* top and bottom | left and right (shorthand property) */
   border-bottom: 10px;
-  margin-top: 20px;
+  margin: 20px 30px 40px 50px; /* top, right, bottom, left */
 }
 ```
 
 ## Display
 
-TODO talk about inline and block elements
+TODO talk about inline and block elements (very briefly)
 
 https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
 https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content
