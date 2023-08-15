@@ -233,6 +233,20 @@ As a rule of thumb, we should not allow user inputs to go unsanitized.
 
 An alternative proposed in MDN's documentation is to use the `textContent` property instead, as the value set will not be parsed as HTML.
 
+#### Why does the anchor element's `href` accept `javascript:`?
+
+This can be caused by developers using an element for its unintended purpose.
+
+The `href` attribute also accepts other values such as `mailto:` and `tel:`, clicking on which causes the system to open a mail client with the sender's address prefilled, or the phone application with the number prefilled.
+
+When supplying javascript, the developer could be intending for the an interaction flow such as to have a sidebar open once a menu has been clicked.
+
+Note that such use cases are frowned upon, as we are able to leverage on more appropriate elements such as a `button`, as well as utilise the `onclick` attribute.
+
+https://stackoverflow.com/questions/7347786/html-anchor-tag-with-javascript-onclick-event
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#onclick_events
+
 #### `script` payload does not execute
 
 TODO talk about `<script>` element being ignored.

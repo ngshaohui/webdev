@@ -9,12 +9,23 @@ It allows us to update the webpage on the fly, based on our user's interactions.
 - Using JS to modify the DOM
 - Event listeners
 
-(TODO: first time using the word DOM, need to look at introducing it earlier)
 JS's capability of making pages update dynamically stems from its ability to manipulate the DOM elements.
+
+## Document Object Model (DOM)
+
+In order to render a webpage, the browser needs store information about the HTML document.
+
+HTML is made of a lot of elements, which can be siblings, children and parents with each other.
+
+The browser will need to have an effective way to figure out all these relationships quickly.
+
+To achieve this it needs to store all the elements in the form of a tree, referred to as the Document Object Model.
+
+When we want to change anything on the page, we need to do it by manipulating the DOM using JS.
 
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
-### Changing content of DOM elements
+## Changing content of DOM elements
 
 `index.html`
 
@@ -40,7 +51,9 @@ const myHeading = document.querySelector("h1");
 myHeading.textContent = "Bye everyone!";
 ```
 
-###
+This causes the existing `h1` tag to change its content.
+
+## Adding functionality
 
 ```html
 <!DOCTYPE html>
@@ -284,3 +297,15 @@ function eggs() {
   alert("Eggs");
 }
 ```
+
+# Appendix
+
+## Tree data structure
+
+A tree is a hierarchical data structure made of **one or many** connected nodes.
+
+Each node can have **none or multiple** child nodes, but can only have **one** parent.
+
+The node that does not have any parent is referred to as the **root** node.
+
+https://en.wikipedia.org/wiki/Tree_(data_structure)
