@@ -43,15 +43,41 @@ console.log(foo); // bye
 
 The `console.log` function prints an output to the console. This is synonymous to the `print` function in Python or the `printf` function in `C` programming.
 
+## Equality
+
+When checking for equality between 2 values, always use the triple equals `===` to compare them instead of double equals `==`.
+
 ## Comments
 
 We can denote comments in javascript using `//`.
 
 When the interpreter encounters `//`, its contents will be ignored.
 
+## Primitives
+
+There are 7 primitives data types in JS.
+
+These are the 5 most frequently encountered data types we will need to work with.
+
+| Type      | typeof return value | Object wrapper |
+| --------- | ------------------- | -------------- |
+| null      | "object"            | N/A            |
+| undefined | "undefined"         | N/A            |
+| boolean   | "boolean"           | Boolean        |
+| number    | "number"            | Number         |
+| string    | "string"            | String         |
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+
+## Objects
+
+In JS, anything that is not a primitive data type is an object.
+
+Objects in JS are denoted with curly braces `{}`.
+
 ## Array
 
-Arrays in javascript are denoted with square brackets `[]`
+Arrays in JS are denoted with square brackets `[]`.
 
 ```js
 const xs = [1, 2, 3];
