@@ -66,22 +66,6 @@ Turns out you can't set script elements using innerHTML which is per its design 
 
 However, HTML elements can still be added with `innerHTML` so we can trigger `onerror` to run javascript.
 
-## Counter app example to illustrate HTML/CSS/JS
-
-Given a simple app built with HTML/CSS/JS it is possible to illustrate what are the core functions of each component.
-
-This can be demonstrated by removing either or both the CSS and JS components, and demonstrating how the page looks/functions.
-
-The components can be removed by deleting the code locally and refreshing the page.
-
-For CSS, it can be deleted via the element inspector as well.
-
-For JS, it needs us to open the chrome devtools and then the command menu to get the option to disable javascript.
-
-Ultimately, this should show that the HTML is the indespensible one in the stack.
-
-Can further illustrate this concept by demonstrating the removal of CSS/JS on the NP webpage.
-
 ## Instagram example to illustrate img elements
 
 Can use the images linked at the bottom of NP's website which are linked to the instagram posts.

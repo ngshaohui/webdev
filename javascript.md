@@ -47,6 +47,8 @@ The `console.log` function prints an output to the console. This is synonymous t
 
 When checking for equality between 2 values, always use the triple equals `===` to compare them instead of double equals `==`.
 
+Since JS is a weakly typed language, we need to ensure that we always use strict equality checks to prevent unwarranted type conversions.
+
 ## Comments
 
 We can denote comments in javascript using `//`.
@@ -69,11 +71,105 @@ These are the 5 most frequently encountered data types we will need to work with
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 
-## Objects
-
-In JS, anything that is not a primitive data type is an object.
+## Objects (part 1)
 
 Objects in JS are denoted with curly braces `{}`.
+
+It is used to store a collection of related data, known as properties.
+
+Each of the object's properties are stored as key-value pairs.
+
+This is similar to how dictionaries work in Python.
+
+```js
+const car = {
+  make: "Ford",
+  model: "Mustang",
+  year: 1969,
+};
+```
+
+### Accessing properties
+
+To access a property in an object, we need to use the key value.
+
+#### Bracket notation
+
+```js
+console.log(car["make"]); // "Ford"
+```
+
+The bracket notation is also similar to the way Python retrieves values from its dictionaries, but it is less commonly encountered.
+
+#### Dot notation
+
+```js
+console.log(car.make); // "Ford"
+```
+
+The dot notation of accessing property values is much more commonly used in most cases, since it is simpler to write.
+
+### Key restrictions
+
+Unlike Python, object keys in JS need can only be strings.
+
+These 2 object declarations are synonymous:
+
+<!-- prettier-ignore -->
+```js
+car = {
+  "make": "Ford",
+};
+```
+
+```js
+car = {
+  make: "Ford",
+};
+```
+
+In the second declaration, JS will automatically convert `make` to a string `"make"`.
+
+Since strings can be used as object keys, it is possible to use a string containing numbers and symbols.
+
+```js
+const car = {
+  "foo-bar-7": "foo",
+  "7-foo-bar": "bar",
+};
+```
+
+When accessing the value, it is not possible to use the dot notation for such complicated keys.
+
+```js
+console.log(car.foo-bar-7);
+// ReferenceError: bar is not defined
+console.log(car.7-foo-bar);
+// SyntaxError: Unexpected number
+```
+
+We can only rely on the bracket notation to retrieve the corresponding value.
+
+```js
+console.log(car["foo-bar-7"]); // "foo"
+console.log(car["7-foo-bar"]); // "bar"
+```
+
+### Setting object properties
+
+We can also add new properties to an existing object, after we have declared it.
+
+```js
+const car = {};
+car.make = "Ford";
+car["model"] = "Mustang";
+
+console.log(person.name); // "Billy Mays"
+console.log(person["model"]); // "Mustang"
+```
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
 ## Array
 
@@ -126,6 +222,40 @@ const identity = (x) => {
 identity(42);
 ```
 
+## Objects (part 2)
+
+Object values can also be other objects, as well as functions.
+
+```js
+const person = {
+  name: "Billy Mays",
+  products: ["OxiClean", "Orange Glo", "Kaboom", "Zorbeez"],
+  catchphrase: function () {
+    return "Hi, Billy Mays here with another fantastic product";
+  },
+};
+
+console.log(person.products[1]); // "Orange Glo"
+console.log(person.catchphrase()); // "Hi, Billy Mays here with another fantastic product"
+```
+
+It is also common to see dictionaries nested within other dictionaries.
+
+```js
+const report = {
+  data: {
+    id: "1337",
+    type: "report",
+    attributes: {
+      title: "XSS in login form",
+      state: "new",
+    },
+  },
+};
+
+console.log(report.data.attributes.title); // "XSS in login form"
+```
+
 # Appendix
 
 ## Semicolons `;`
@@ -133,3 +263,33 @@ identity(42);
 Do note that semicolons are optional.
 
 You are encouraged to place them at the end of each line, but omitting them is acceptable.
+
+## Variable and function naming
+
+You are encouraged to adopt camelCase convetion as much as possible, but other styles are acceptable as long as you are consistent.
+
+## Usage of `this`
+
+This course shall avoid the use of `this` as much as possible since OOP is still being taught.
+
+## Nested objects
+
+Can demonstrate accessing object properties on VSCode with autocompletion.
+
+## Autoboxing
+
+Primitive values are not supposed to have any methods, but it is still possible to access their associated properties.
+
+```js
+const st = "this is a string primitive";
+
+console.log(st.charAt(1)); // "h"
+```
+
+A `String` wrapper object will be created first, which contains the `charAt` method belonging to the `String` class.
+
+Primitives are preferred over their class counterparts, as the latter incurs some overhead.
+
+As much as possible, we can simply declare primitives, relying on autoboxing to do the heavy lifting for us.
+
+https://stackoverflow.com/a/17256419
