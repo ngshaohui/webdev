@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete from DOM</title>
+  </head>
+  <body>
+    <button id="btn">Remove header</button>
+    <h1 id="header">Now you see me</h1>
+    <script>
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", () => {
+        const header = document.querySelector("#header");
+        header.remove();
+      });
+    </script>
+  </body>
+</html>

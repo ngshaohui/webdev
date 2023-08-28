@@ -164,8 +164,8 @@ const car = {};
 car.make = "Ford";
 car["model"] = "Mustang";
 
-console.log(person.name); // "Billy Mays"
-console.log(person["model"]); // "Mustang"
+console.log(car.make); // "Ford"
+console.log(car.model); // "Mustang"
 ```
 
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
@@ -193,16 +193,20 @@ We may also insert elements to the front with the `unshift` method
 
 ```js
 const xs = [1, 2, 3];
-xs.unshift(4); // adds an element to the front of the list
-console.log(xs); // [4, 1, 2, 3]
+xs.unshift(0); // adds an element to the front of the list
+console.log(xs); // [0, 1, 2, 3]
 ```
 
 Alternatively, we can simply create a new array and use that instead
 
 ```js
 const xs = [1, 2, 3];
-const ys = [...xs, 4];
+const ys = xs.concat(4);
+console.log(xs); // [1, 2, 3]
+console.log(ys); // [1, 2, 3, 4]
 ```
+
+Note that the existing array `xs` remains unchanged.
 
 ## Functions
 
@@ -210,16 +214,57 @@ const ys = [...xs, 4];
 function identity(x) {
   return x;
 }
-identity(27);
+identity(27); // 27
 ```
 
-Alternatively, we may also use ES6 arrow functions as well.
+Another way to declare functions is to use ES6 arrow functions.
 
 ```js
 const identity = (x) => {
   return x;
 };
-identity(42);
+identity(42); // 42
+```
+
+Both syntax are equally common, and often used in conjunction wich each other.
+
+However, do note that arrow functions are not hoisted.
+
+## Strings
+
+Strings are denoted with single `'` or double `"` inverted commas.
+
+Similar to arrays, we can reference characters at a specific position.
+
+```js
+const st = "Hello world";
+console.log(st[1]); // e
+```
+
+Unlike arrays they are immutable.
+
+```js
+const st = "Hello world";
+st[1] = "p";
+console.log(st[1]); // Hello world
+// st remains unchanged
+```
+
+### Template literals
+
+We can also declare strings using backticks `` ` `` to create a template literal.
+
+```js
+const st = `Hello world`;
+```
+
+When declaring a string using backticks `` ` ``, it is possible to evaluate JS expressions.
+
+```js
+const product = "apples";
+const quantity = 27;
+const st = `There are ${quantity * 2} ${product}`;
+console.log(st); // There are 54 apples
 ```
 
 ## Objects (part 2)
@@ -256,7 +301,208 @@ const report = {
 console.log(report.data.attributes.title); // "XSS in login form"
 ```
 
+## Control flow: `if else`
+
+`if` and `else` statements can be used to alter the control flow of code.
+
+```js
+const foo = 27;
+if (foo == 7) {
+  console.log("foo is 7");
+} else if (foo == 42) {
+  console.log("foo is 42");
+} else {
+  console.log(`foo is ${foo}`);
+}
+```
+
+### Ternary operator
+
+The ternary operator can be used as a shorter form of `if else` statements.
+
+It is best used in place of conditions involving only `if` and `else` statements (no `else if`).
+
+```js
+const foo = 27;
+if (foo == 7) {
+  console.log("foo is 7");
+} else {
+  console.log(`foo is ${foo}`);
+}
+```
+
+The equivalent for the above would be:
+
+```js
+const foo = 27;
+foo == 7 ? console.log("foo is 7") : console.log(`foo is ${foo}`);
+```
+
+It is possible to use the ternary operator for more complicated statements, but it risks becoming unreadable.
+
+```js
+foo == 7
+  ? console.log("foo is 7")
+  : foo == 42
+  ? console.log("foo is 42")
+  : console.log(`foo is ${foo}`);
+```
+
+### Usage with template literals
+
+Since template literals can take JS expressions, it is possible to use ternary operators there.
+
+```js
+function greet(name = "") {
+  return `Hello ${name !== "" ? name : "somebody"}`;
+}
+greet("bob"); // Hello bob
+greet(); // Hello somebody
+```
+
+TODO url for ternary operator
+
 # Appendix
+
+## Spread operator `...`
+
+For objects `{}` and arrays `[]`, we may use the spread operator `...` to destructure them.
+
+This is used for quickly passing multiple values into a function or object that expects multiple arguments.
+
+It works by expanding the array into its constituting elements.
+
+### Usage with arrays
+
+When declaring arrays, we can specify the elements we want to initialise it with.
+
+```js
+const xs = [1, 2, 3];
+```
+
+If we want to create another array based off an existing one, we can use the spread operator to accomplish it.
+
+```js
+const xs = [1, 2, 3];
+const ys = [...xs];
+console.log(ys); // [1, 2, 3]
+```
+
+This would be synonymous to specifying that we want the new array `ys` to use all the elements of `xs`.
+
+```js
+// synonymous form
+const xs = [1, 2, 3];
+const ys = [xs[0], xs[1], xs[2]];
+```
+
+This makes it easier to prepend or append elements to the array.
+
+```js
+const xs = [1, 2, 3];
+const ys = [...xs, 4, 5]; // append to the back
+console.log(ys); // [1, 2, 3, 4, 5]
+const zs = [0, ...xs];
+console.log(zs); // [0, 1, 2, 3]
+```
+
+We can also concatenate multiple arrays.
+
+```js
+const xs = [1, 2, 3];
+const ys = [4, 5, 6];
+const zs = [...xs, ...ys];
+console.log(zs); // [1, 2, 3, 4, 5, 6]
+```
+
+### Usage with objects
+
+Similar to arrays, we can create new objects based off existing ones.
+
+```js
+const obj1 = {
+  foo: 27,
+  bar: 42,
+};
+const obj2 = { ...obj1 };
+```
+
+With the spread operator, we can choose to replace specific properties.
+
+```js
+const obj1 = {
+  foo: 27,
+  bar: 42,
+};
+const obj2 = { ...obj1, foo: 7 };
+console.log(obj2); // {foo: 7, bar: 42}
+```
+
+Do note that the object being referenced has to be the first argument in the new object, as we need to destructure it first before overwriting its properties.
+
+```js
+const obj1 = {
+  foo: 27,
+  bar: 42,
+};
+const obj2 = { foo: 7, ...obj1 }; // this will NOT overwrite property foo
+console.log(obj2); // {foo: 27, bar: 42}
+```
+
+We can also merge multiple objects.
+
+```js
+const obj1 = {
+  foo: 27,
+  bar: 42,
+};
+const obj2 = {
+  spam: 7,
+  bar: 99,
+};
+const obj3 = {
+  ...obj1,
+  ...obj2,
+};
+console.log(obj3); // {foo: 27, bar: 99, spam: 7}
+```
+
+### Usage with functions
+
+We can use the spread operator to pass in multiple arguments.
+
+```js
+function add(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+let ls = [27, 42, 7];
+add(...ls);
+// this is the same as writing add(ls[0], ls[1], ls[2])
+```
+
+It is possible to have a function that takes in an indefinite number of arguments.
+
+```js
+function indefiniteArgs(first, ...remainder) {
+  console.log(`The first argument is: ${first}`);
+  console.log(`The rest of the arguments are: ${remainder}`);
+}
+indefiniteArgs(1, 2, 3, 4, 5);
+// The first argument is: 1
+// The rest of the arguments are: 2,3,4,5
+```
+
+### Iterables
+
+Objects and lists are not the only data structures that can be destructured.
+
+Any iterable object can also be destructured.
+
+```js
+const st = "apple"; // string
+const ls = [...st];
+console.log(ls); // ['a', 'p', 'p', 'l', 'e']
+```
 
 ## Semicolons `;`
 
@@ -293,3 +539,30 @@ Primitives are preferred over their class counterparts, as the latter incurs som
 As much as possible, we can simply declare primitives, relying on autoboxing to do the heavy lifting for us.
 
 https://stackoverflow.com/a/17256419
+
+## Control flow: `for`
+
+### `for...of`
+
+```js
+const foodList = ["spam", "eggs", "bacon"];
+for (item of foodList) {
+  console.log(item);
+}
+```
+
+### `for` ... `let`
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(`Iteration number ${i}`);
+}
+```
+
+[x] functions and arrow functions
+[x] objects
+[ ] arrays and array methods
+[x] destructuring
+[x] template literals
+[x] ternary operators
+[ ] modules and import/export

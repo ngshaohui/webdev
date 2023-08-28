@@ -1,6 +1,6 @@
 # Javascript and the DOM
 
-JS helps us achieve dynamic behaviour to webpages, by allowing us to add complex logic and functionality.
+JS helps us add dynamic behaviour to webpages, by allowing us to add complex logic and functionality.
 
 It allows us to update the webpage on the fly, based on our user's interactions.
 
@@ -132,7 +132,7 @@ const sidebarHeader = document.querySelector("div.user-panel.sidebar h1");
 
 ### Selecting multiple elements
 
-As the name would suggest, `querySelectorAll` would select all elements fulfilling a criteria.
+As the name suggests, `querySelectorAll` would select all elements fulfilling a criteria.
 
 ```js
 // selecting all the paragraph elements
@@ -171,7 +171,7 @@ Target: `btn`
 Event: `"click"`
 Callback Function:
 
-```
+```js
 function() {
   // change webpage's background to a random color
   const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
@@ -296,6 +296,51 @@ We can also attach event listeners in the HTML element, rather than first select
 function eggs() {
   alert("Eggs");
 }
+```
+
+## Deleting elements from the DOM
+
+To delete an element, we simply need to select it and call its `remove` method.
+
+```html
+<button id="btn">Remove header</button>
+<h1 id="header">Now you see me</h1>
+```
+
+```js
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  const header = document.querySelector("#header");
+  header.remove();
+});
+```
+
+## Adding elements to the DOM
+
+To add an element, it first needs to be created with `createElement`.
+
+If we wish to add text to the element, this can be done using `createTextNode`.
+
+```html
+<button id="add">Add list item</button>
+<ol id="list">
+  <li>Default item</li>
+  <li>Default item</li>
+</ol>
+```
+
+```js
+const ls = document.querySelector("#list");
+
+function addItem() {
+  const newItem = document.createElement("li");
+  const textContent = document.createTextNode("Button added item");
+  newItem.appendChild(textContent);
+  ls.appendChild(newItem);
+}
+
+const btn = document.querySelector("#add");
+btn.addEventListener("click", addItem);
 ```
 
 # Appendix

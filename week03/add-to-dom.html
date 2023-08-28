@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add to DOM</title>
+  </head>
+  <body>
+    <button id="add">Add list item</button>
+    <ol id="list">
+      <li>Default item</li>
+      <li>Default item</li>
+    </ol>
+    <script>
+      const ls = document.querySelector("#list");
+
+      function addItem() {
+        const newItem = document.createElement("li");
+        const textContent = document.createTextNode("Button added item");
+        newItem.appendChild(textContent);
+        ls.appendChild(newItem);
+      }
+
+      const btn = document.querySelector("#add");
+      btn.addEventListener("click", addItem);
+    </script>
+  </body>
+</html>

@@ -2,6 +2,36 @@
 
 Scratchpad contains ideas to be incorporated into the lessons, but not sure where to park them under yet.
 
+## Functional array methods
+
+When working with arrays, there are 2 useful methods `filter` and `map` .
+
+### `filter`
+
+As the name suggests, the `filter` method takes a function, and returns an array with elements fulfilling the function's condition.
+
+```js
+function isEven(num) {
+  return num % 2 == 0;
+}
+const ls = [1, 2, 3, 4, 5, 6, 7];
+const evenNums = ls.filter(isEven);
+console.log(evenNums); // [2, 4, 6]
+```
+
+### `map`
+
+The `map` method takes a function, and applies it on every element in the array.
+
+```js
+function doubleNum(num) {
+  return num * 2;
+}
+const ls = [1, 2, 3, 4];
+const lsDouble = ls.map(doubleNum);
+console.log(lsDouble); // [2, 4, 6, 8]
+```
+
 ## Accessibility
 
 An often neglected area of websites is making them more accessible to people with disabilities.

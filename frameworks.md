@@ -12,22 +12,19 @@ But first, we need to breakdown what is a web framework.
 
 A web framework is just a collection of JS libraries, as well as various tools required to aid us in web development.
 
-- compiler
-- transpiler
+- compiler/transpiler
 - development server (hot reload)
-- linters
-- routing
+- linter
+- router
 - template generation?
 
-## Transpiler and polyfills
+## Compiler/transpiler and polyfill
 
 With multiple competing browsers in the market, not all of them will support the same features.
 
 In the past, it was also imperative to support Internet Explorer, which was the most used browser for a good amount of time.
 
 Having transpiliers allowed developers to adopt modern features and paradigms in their development process, then being able to polyfill them for backwards or cross platform compatibility.
-
-TODO check if JSX -> JS is also part of transpilation
 
 ## Linters
 
