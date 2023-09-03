@@ -1,8 +1,6 @@
 # NextJS
 
-Attempt the learning exercises about NextJS, obtaining the maximum points for each of the sections.
-
-Attempt up till 
+Attempt the following learning exercises about NextJS, obtaining the maximum points for each of the sections.
 
 Foundations
 - From JavaScript to React

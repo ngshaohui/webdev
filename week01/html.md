@@ -253,7 +253,11 @@ Another example would be sites that want to provide widget functionalities.
 ></iframe>
 ```
 
-TODO: talk about how youtube doesn't allow the embedded iframe to be served from the local file
+When opening the webpage with the embedded Youtube `iframe` element, it might show that the video is unavailable and prompts you to watch it on Youtube instead.
+
+This only occurs when we open the webpage in our browser from our filesystem.
+
+In order to display the Youtube `iframe` correctly, we need to serve the page from a webserver instead.
 
 ## Void elements
 

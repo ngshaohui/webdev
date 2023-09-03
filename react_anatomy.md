@@ -1,28 +1,6 @@
 # ReactJS
 
-(TODO: Pre-req and setting up shouldn't be part of lesson slides)
-(students should be expected to set it up before class)
-
-## Prerequisites
-
-In order to work with react, we will need to install NodeJS as well.
-
-This gives us access to the Node Package Manager (NPM), which will allow us to install and manage javascript packages required by the ReactJS framework.
-
-You can check that Node and NPM is successfully set up by running:
-
-```bash
-npm --version
-```
-
-Which should tell you what's the currently installed version.
-
-If `npm` is not found, you will get the following message:
-
-```
-'npm' is not recognized as an internal or external command,
-operable program or batch file.
-```
+React with Create React App (deprecated)
 
 ## Setting up your react project
 
