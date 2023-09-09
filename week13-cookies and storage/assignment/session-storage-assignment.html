@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipping Form</title>
+  </head>
+  <body>
+    <h1>Shipping Information</h1>
+    <label>Populate form fields</label>
+    <button onclick="populateFields()">Populate</button><br /><br />
+    <form id="shipping-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required /><br /><br />
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required /><br /><br />
+
+      <label for="zip">Zip Code:</label>
+      <input type="text" id="zip" name="zip" required /><br /><br />
+    </form>
+
+    <script>
+      const form = document.getElementById("shipping-form");
+
+      function populateFields() {
+        const data = {
+          name: "Billy",
+          address: "School of Infocomm Technology",
+          city: "Singapore",
+          zip: "599489",
+        };
+        document.querySelector("#name").value = data.name;
+        document.querySelector("#address").value = data.address;
+        document.querySelector("#city").value = data.city;
+        document.querySelector("#zip").value = data.zip;
+        sessionStorage.setItem("shippingData", JSON.stringify(data));
+      }
+
+      // Store the form data in session storage whenever an input field changes
+      form.addEventListener("input", () => {
+        const formData = new FormData(form);
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+        sessionStorage.setItem("shippingData", JSON.stringify(data));
+      });
+
+      // Populate the form with data from session storage on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        const storedData =
+          JSON.parse(sessionStorage.getItem("shippingData")) || {};
+        for (const key in storedData) {
+          if (Object.hasOwnProperty.call(storedData, key)) {
+            const inputField = form.querySelector(`[name="${key}"]`);
+            if (inputField) {
+              inputField.value = storedData[key];
+            }
+          }
+        }
+      });
+    </script>
+    <!-- Adapted from https://chat.openai.com/share/858017da-9ccc-45d7-826e-03be787c7ecd -->
+  </body>
+</html>

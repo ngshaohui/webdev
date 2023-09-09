@@ -99,7 +99,7 @@ Traditionally, there are a number of element selectors we can use:
 - getElementsByTagName()
 - getElementsByTagNameNS()
 
-While these are still functional and can be used, there is a much newer and elaborate Selector API `querySelector` we can leverage which allows mixed querying.
+While these are still functional and can be used, there is a much newer and elaborate CSS selector `querySelector` we can leverage which allows more robustness in querying.
 
 ```js
 // selecting the paragraph element
@@ -354,3 +354,9 @@ Each node can have **none or multiple** child nodes, but can only have **one** p
 The node that does not have any parent is referred to as the **root** node.
 
 https://en.wikipedia.org/wiki/Tree_(data_structure)
+
+## Performance of `querySelector`
+
+While `querySelector` is more robust, it is also less performant than its more specific counterparts.
+
+However do note that, it is not necessary to over optimise at this stage of learning for marginal gains.
