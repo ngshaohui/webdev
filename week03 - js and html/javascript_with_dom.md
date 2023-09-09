@@ -11,20 +11,6 @@ It allows us to update the webpage on the fly, based on our user's interactions.
 
 JS's capability of making pages update dynamically stems from its ability to manipulate the DOM elements.
 
-## Document Object Model (DOM)
-
-In order to render a webpage, the browser needs store information about the HTML document.
-
-HTML is made of a lot of elements, which can be siblings, children and parents with each other.
-
-The browser will need to have an effective way to figure out all these relationships quickly.
-
-To achieve this it needs to store all the elements in the form of a tree, referred to as the Document Object Model.
-
-When we want to change anything on the page, we need to do it by manipulating the DOM using JS.
-
-https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
-
 ## Changing content of DOM elements
 
 `index.html`
@@ -54,6 +40,8 @@ myHeading.textContent = "Bye everyone!";
 This causes the existing `h1` tag to change its content.
 
 ## Adding functionality
+
+`color-change.html`
 
 ```html
 <!DOCTYPE html>
@@ -93,11 +81,11 @@ This causes the existing `h1` tag to change its content.
 
 Traditionally, there are a number of element selectors we can use:
 
-- getElementById()
-- getElementsByClassName()
-- getElementsByName()
-- getElementsByTagName()
-- getElementsByTagNameNS()
+- getElementById
+- getElementsByClassName
+- getElementsByName
+- getElementsByTagName
+- getElementsByTagNameNS
 
 While these are still functional and can be used, there is a much newer and elaborate CSS selector `querySelector` we can leverage which allows more robustness in querying.
 
@@ -111,6 +99,16 @@ const warningClassElement = document.querySelector(".warning");
 // selecting an element with Id
 const menuBarElement = document.querySelector("#menuBar");
 ```
+
+## Document Object Model (DOM)
+
+The DOM is the browser's data representation of information in the HTML document.
+
+To achieve this it needs to store all the elements in the form of a tree, referred to as the Document Object Model.
+
+When we want to change anything on the page, we need to do it by manipulating the DOM using JS.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
 ### Compound queries
 
@@ -146,6 +144,10 @@ Whenever something changes on the browser, an `event` is generated.
 This can be from user interactions such as mouse clicks, moving the mouse, window resizing, etc.
 
 We can listen to specific events, allowing our webpage to respond dynamically to the user.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 
 ### Attaching event listeners to elements
 
@@ -185,13 +187,13 @@ The supplied callback function does not execute until the event is fired.
 
 Let us try to separate the JS we have written into a separate file, and load it in the header.
 
-`index.html`
+`color-change-external.html`
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello world!</title>
+    <title>Color change</title>
     <script src="color.js"></script>
   </head>
 
@@ -246,7 +248,7 @@ The `document` object serves as an entry point into the DOM tree, so it already 
 `color.js`
 
 ```js
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   const btn = document.querySelector("button");
 
   /**
@@ -298,23 +300,6 @@ function eggs() {
 }
 ```
 
-## Deleting elements from the DOM
-
-To delete an element, we simply need to select it and call its `remove` method.
-
-```html
-<button id="btn">Remove header</button>
-<h1 id="header">Now you see me</h1>
-```
-
-```js
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", () => {
-  const header = document.querySelector("#header");
-  header.remove();
-});
-```
-
 ## Adding elements to the DOM
 
 To add an element, it first needs to be created with `createElement`.
@@ -341,6 +326,31 @@ function addItem() {
 
 const btn = document.querySelector("#add");
 btn.addEventListener("click", addItem);
+```
+
+### Example
+
+- Dynamically add new rows to a form
+
+## Deleting elements from the DOM
+
+To delete an element, we simply need to select it and call its `remove` method.
+
+```html
+<button id="btn">
+  Remove header
+</button>
+<h1 id="header">
+  Now you see me
+</h1>
+```
+
+```js
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  const header = document.querySelector("#header");
+  header.remove();
+});
 ```
 
 # Appendix

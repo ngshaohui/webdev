@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color change</title>
+  </head>
+
+  <body>
+    <section>
+      <button>Change color</button>
+    </section>
+    <script>
+      const btn = document.querySelector("button");
+
+      /**
+       * Returns a random number from 0 to the given upper limit
+       *
+       * @param {number} upperLimit The maximum range
+       * @return {number} The randomly selected number
+       */
+      function random(upperLimit) {
+        return Math.floor(Math.random() * (upperLimit + 1));
+      }
+
+      btn.addEventListener("click", function () {
+        // change webpage's background to a random color
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      });
+    </script>
+  </body>
+</html>

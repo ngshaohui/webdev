@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete from DOM</title>
+  </head>
+  <body>
+    <ol id="list">
+      <li>Default item</li>
+      <li>Default item</li>
+    </ol>
+    <button id="btn">Remove element</button>
+    <script>
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", () => {
+        const ls = document.querySelector("#list");
+        ls.remove();
+      });
+    </script>
+  </body>
+</html>
