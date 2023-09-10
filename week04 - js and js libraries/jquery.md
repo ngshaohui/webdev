@@ -1,12 +1,12 @@
 # jQuery
 
-jQuery is still incredibly prevalent in websites, as the most popular JS library.
+Created in 2006, jQuery is still incredibly prevalent in websites as the most used JS library.
 
 While web frameworks are rising in popularity, most of the webpages that we know of today were built with jQuery or have some indirect dependency on it.
 
 ## Rise in prominence
 
-jQuery's widespread adoption was driven by its ability to overcome different competing browsers, which had differing support for JS features.
+jQuery's widespread adoption was driven by its ability to overcome different competing browser standards, which had differing support for JS features.
 
 Its biggest use case was to accomplish DOM manipulation and AJAX calls, and it grew to include different plugins for other commonly used functionalities.
 
@@ -132,3 +132,7 @@ https://getbootstrap.com/docs/5.0/getting-started/javascript/#still-want-to-use-
 ## Indirect dependencies
 
 Can talk about how Wappalyzer's 2nd most used JS library is core-js, which is inevitably installed since a lot of other packages also depend on it.
+
+## Internet Explorer had no support for `Array.prototype.includes()`
+
+https://web.archive.org/web/20190717112737/https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Browser_compatibility
