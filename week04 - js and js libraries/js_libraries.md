@@ -1,10 +1,75 @@
 # JS libraries
 
-Libraries exist in every language, which contains pre-written code to solve a particular problem.
+Libraries exist in every language, which contains pre-defined functions we can tap on.
 
-This allows us to focus on other logics
+This allows us to focus on other things like business logic, saving us immense amounts of time.
+
+## Benefits to using libraries in general
+
+Libraries
+
+### Increase developer productivity
+
+Since we do not need to reimplement code, we simply need to identify where to apply it.
+
+Many libraries also come with tests written, so we know they are reliable to a certain extent (bugs can still exist).
+
+### Code optimisation
+
+We may also adopt libraries that we know are more performant.
+
+This can be in the form of time the space and time required by the code to run, or even the file size added to our programs.
+
+### Consistent development experience
+
+If we have already used a library before, we can understand new codebases using the same library much faster.
+
+## JS ecosystem
+
+JS itself does not have a standard library like other languages.
+
+Instead, it provides built-in objects with various methods which essentially functions as libraries.
+
+One such object is `Math` which contains methods used for mathematical calculations.
+
+```js
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.max(27, 42, 7)); // 42
+```
+
+However, it has a very rich and robust ecosystem of user created libraries, plenty of which are open source.
+
+## Using libraries
+
+### Load online resource
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add to DOM</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+</html>
+```
+
+### Download file and include locally
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add to DOM</title>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+  </head>
+</html>
+```
+
+For example, NP chooses to include their own jQuery library locally.
 
 ## Topics
 
 - creating your own libraries, reusing code you have written
 - how to use libraries
+
+# Appendix

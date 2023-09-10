@@ -377,6 +377,12 @@ TODO
 
 ```
 
+## Media queries
+
+TODO
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
 ## Inline style
 
 On top of using stylesheets, it is possible to do inline styling within the HTML element itself.

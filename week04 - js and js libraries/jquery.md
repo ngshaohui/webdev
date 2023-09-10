@@ -87,7 +87,7 @@ However, do note that the 2022 survey combines both Web Technologies and Framewo
 
 As a comparison among just Web frameworks in 2022, jQuery still ranks above Angular (20.39%).
 
-https://survey.stackoverflow.co/2020/#technology-web-frameworks
+https://survey.stackoverflow.co/2020#technology-web-frameworks
 https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe-prof
 
 jQuery's decline in popular is only eventual as these Javascript frameworks mature, and creating new paradigms for developers so they do not have to rely on direct DOM manipulation which was one of jQuery's biggest selling points.
@@ -105,6 +105,12 @@ While new websites are being built with new technologies, existing websites that
 Even if jQuery is not being used in a website, it is possible that the 3rd party libraries have a dependence on it, creating an indirect dependence.
 
 https://www.wappalyzer.com/technologies/javascript-libraries/
+
+### Wordpress
+
+Wordpress includes jQuery by default.
+
+https://developer.wordpress.org/plugins/javascript/
 
 ### Bootstrap
 

@@ -55,9 +55,20 @@ We can denote comments in javascript using `//`.
 
 When the interpreter encounters `//`, its contents will be ignored.
 
+We can use `/* */` to write multiline comments.
+
+```js
+// comment
+
+/*
+multi-line
+comment
+*/
+```
+
 ## Primitives
 
-There are 7 primitives data types in JS.
+There are 7 primitive data types in JS.
 
 These are the 5 most frequently encountered data types we will need to work with.
 
@@ -472,13 +483,12 @@ console.log(obj3); // {foo: 27, bar: 99, spam: 7}
 We can use the spread operator to pass in multiple arguments.
 
 ```js
-function add(num1, num2, num3) {
-  return num1 + num2 + num3;
-}
 let ls = [27, 42, 7];
-add(...ls);
+Math.max(...ls); // 42
 // this is the same as writing add(ls[0], ls[1], ls[2])
 ```
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 
 It is possible to have a function that takes in an indefinite number of arguments.
 
