@@ -200,7 +200,17 @@ xs.unshift(0); // adds an element to the front of the list
 console.log(xs); // [0, 1, 2, 3]
 ```
 
-Alternatively, we can simply create a new array and use that instead
+We can use `concat` to merge arrays.
+
+It does not mutate the existing array, and returns a new array instead.
+
+```js
+const xs = [1, 2, 3];
+console.log(xs.concat([4, 5, 6])); // [1, 2, 3, 4, 5, 6]
+console.log(xs); // [1, 2, 3]
+```
+
+This allows us to create a new array and use that instead, while maintaining the original value of `xs`.
 
 ```js
 const xs = [1, 2, 3];
@@ -208,8 +218,6 @@ const ys = xs.concat(4);
 console.log(xs); // [1, 2, 3]
 console.log(ys); // [1, 2, 3, 4]
 ```
-
-Note that the existing array `xs` remains unchanged.
 
 ## Functions
 
@@ -229,7 +237,7 @@ const identity = (x) => {
 identity(42); // 42
 ```
 
-Both syntax are equally common, and often used in conjunction wich each other.
+Both syntax are equally common, and often used in conjunction with each other.
 
 However, do note that arrow functions are not hoisted.
 
