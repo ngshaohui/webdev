@@ -24,7 +24,7 @@ This can be in the form of time the space and time required by the code to run, 
 
 If we have already used a library before, we can understand new codebases using the same library much faster.
 
-## JS ecosystem
+## JS build-in objects
 
 JS itself does not have a standard library like other languages.
 
@@ -39,7 +39,13 @@ console.log(Math.max(27, 42, 7)); // 42
 
 However, it has a very rich and robust ecosystem of user created libraries, plenty of which are open source.
 
-## Using libraries
+## Using external libraries
+
+We can either choose to include the library's URI in the `src` attribute, or download it and include it locally.
+
+The scripts can be loaded in the `<head>` or at the end of the `<body>`.
+
+Make sure to consult the library's installation guide when adding them.
 
 ### Load online resource
 
@@ -47,25 +53,39 @@ However, it has a very rich and robust ecosystem of user created libraries, plen
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add to DOM</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Load online resource</title>
   </head>
+  <body>
+    <h1>content</h1>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </body>
 </html>
 ```
 
-### Download file and include locally
+### Download library and include locally
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add to DOM</title>
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <title>Include library locally</title>
   </head>
+  <body>
+    <h1>content</h1>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+  </body>
 </html>
 ```
 
 For example, NP chooses to include their own jQuery library locally.
+
+## Content Delivery Network
+
+A Content Delivery Network (CDN) is a service that helps speed up content delivery.
+
+Many web resources are hosted by
+
+https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 
 ## Topics
 
@@ -73,3 +93,9 @@ For example, NP chooses to include their own jQuery library locally.
 - how to use libraries
 
 # Appendix
+
+## Learning objectives
+
+- why are libraries being used
+- how to load JS libraries
+- where to find JS libraries in a HTML document
