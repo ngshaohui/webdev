@@ -24,7 +24,7 @@ This can be in the form of time the space and time required by the code to run, 
 
 If we have already used a library before, we can understand new codebases using the same library much faster.
 
-## JS build-in objects
+## JS built-in objects
 
 JS itself does not have a standard library like other languages.
 
@@ -79,6 +79,10 @@ Make sure to consult the library's installation guide when adding them.
 
 For example, NP chooses to include their own jQuery library locally.
 
+## Cross browser support
+
+JS behaviour depends on the implementation of the browser's developers.
+
 ## Content Delivery Network
 
 A Content Delivery Network (CDN) is a service that helps speed up content delivery.
@@ -99,3 +103,4 @@ https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 - why are libraries being used
 - how to load JS libraries
 - where to find JS libraries in a HTML document
+  - head vs end of body

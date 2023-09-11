@@ -122,48 +122,40 @@ The dot notation of accessing property values is much more commonly used in most
 
 ### Key restrictions
 
-Unlike Python, object keys in JS need can only be strings.
-
-These 2 object declarations are synonymous:
-
-<!-- prettier-ignore -->
-```js
-car = {
-  "make": "Ford",
-};
-```
-
-```js
-car = {
-  make: "Ford",
-};
-```
-
-In the second declaration, JS will automatically convert `make` to a string `"make"`.
+Unlike Python, object keys in JS need can only be strings or numbers.
 
 Since strings can be used as object keys, it is possible to use a string containing numbers and symbols.
 
 ```js
-const car = {
-  "foo-bar-7": "foo",
-  "7-foo-bar": "bar",
+const obj = {
+  foo: "foo",
+  0: "bar",
+  "foo-bar-27": "baz",
+  "27-foo-bar": "foobar",
 };
 ```
 
-When accessing the value, it is not possible to use the dot notation for such complicated keys.
+When using a number, JS will automatically convert the number `0` to a string `"0"`.
 
 ```js
-console.log(car.foo-bar-7);
+console.log(obj[0]); // "bar"
+console.log(obj["0"]); // "bar"
+```
+
+When accessing a key with symbols, it is not possible to use the dot notation.
+
+```js
+console.log(obj.foo-bar-27);
 // ReferenceError: bar is not defined
-console.log(car.7-foo-bar);
+console.log(obj.27-foo-bar);
 // SyntaxError: Unexpected number
 ```
 
 We can only rely on the bracket notation to retrieve the corresponding value.
 
 ```js
-console.log(car["foo-bar-7"]); // "foo"
-console.log(car["7-foo-bar"]); // "bar"
+console.log(obj["foo-bar-27"]); // "baz"
+console.log(obj["27-foo-bar"]); // "foobar"
 ```
 
 ### Setting object properties
