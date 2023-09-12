@@ -180,6 +180,7 @@ Arrays in JS are denoted with square brackets `[]`.
 
 ```js
 const xs = [1, 2, 3];
+console.log(xs[1]); // 2
 ```
 
 ### Mutating the array
@@ -374,6 +375,14 @@ greet(); // Hello somebody
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 # Appendix
+
+## `console` is an object
+
+Since `console` is an object, it is possible to use the brackets notation to call its methods.
+
+```js
+console["log"]("Hello world");
+```
 
 ## Spread operator `...`
 
