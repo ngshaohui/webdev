@@ -79,22 +79,13 @@ Make sure to consult the library's installation guide when adding them.
 
 For example, NP chooses to include their own jQuery library locally.
 
+### Using the library
+
+TODO
+
 ## Cross browser support
 
 JS behaviour depends on the implementation of the browser's developers.
-
-## Content Delivery Network
-
-A Content Delivery Network (CDN) is a service that helps speed up content delivery.
-
-Many web resources are hosted by
-
-https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
-
-## Topics
-
-- creating your own libraries, reusing code you have written
-- how to use libraries
 
 # Appendix
 
@@ -104,3 +95,11 @@ https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 - how to load JS libraries
 - where to find JS libraries in a HTML document
   - head vs end of body
+
+## Content Delivery Network
+
+A Content Delivery Network (CDN) is a service that helps speed up content delivery.
+
+Many web resources are hosted by
+
+https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
