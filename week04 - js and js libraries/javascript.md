@@ -353,6 +353,14 @@ foo == 7 ? console.log("foo is 7") : console.log(`foo is ${foo}`);
 It is possible to use the ternary operator for more complicated statements, but it risks becoming unreadable.
 
 ```js
+if (foo == 7) {
+  console.log("foo is 7");
+} else if (foo == 42) {
+  console.log("foo is 42");
+} else {
+  console.log(`foo is ${foo}`);
+}
+
 foo == 7
   ? console.log("foo is 7")
   : foo == 42

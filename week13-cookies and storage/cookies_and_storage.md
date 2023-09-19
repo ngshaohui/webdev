@@ -67,7 +67,7 @@ When the web browser, or all tabs of a webpage are closed, this clears the objec
 
 ```js
 sessionStorage.setItem("key", "value");
-let data = sessionStorage.getItem("key");
+const data = sessionStorage.getItem("key");
 sessionStorage.removeItem("key");
 sessionStorage.clear();
 ```
@@ -82,7 +82,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
 
 ## Access to storage
 
-The browser sandboxes the data that has been stored according to its origin.
+The browser partitions the data that has been stored according to its origin.
 
 This effectively means that website A cannot access data stored by website B.
 

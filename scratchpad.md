@@ -359,8 +359,6 @@ This is similar to achieving XSS in `appendElement`.
 
 ## Going further
 
-### Typescript
-
 ### Server side rendering
 
 ## What else can the browser do
@@ -378,3 +376,9 @@ Other than handling HTML, CSS, JS, it also contains codecs to play media files s
 It also has things like password managers and even the ability to sync user session across different devices.
 
 Browsers have evolved to accomplish more than just browsing, capable of accomodating fully featured web applications.
+
+## Assignment
+
+Create a Next.js project that does a fetch API call to retrieve a resource from gov api
+
+Have to use a component library or css library to layout the data.

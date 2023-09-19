@@ -14,7 +14,7 @@ At a very minimum, we need the HTML document to exist in order to show anything 
 
 ## Minimal HTML document
 
-`index.html`
+`minimal.html`
 
 ```html
 <!DOCTYPE html>
@@ -27,8 +27,6 @@ At a very minimum, we need the HTML document to exist in order to show anything 
   </body>
 </html>
 ```
-
-Save the file as `index.html` and view its contents in a browser.
 
 ### DOCTYPE
 

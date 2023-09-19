@@ -9,6 +9,12 @@ Create your first app
 
 https://nextjs.org/learn/foundations/about-nextjs
 
+## Agenda
+
+- have a in-class setting up tutorial and live coding demonstration to generate components
+- let students try the setting up themselves
+- can go through codesandbox in a subsequent lesson
+
 # Appendix
 
 ## Optional learning
