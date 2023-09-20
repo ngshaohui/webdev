@@ -1,51 +1,7 @@
 # ReactJS
 
-React with Create React App (deprecated)
-
-## Setting up your react project
-
-```bash
-npx create-react-app learn-react
-```
-
-(TODO: double check) If this is your first time running this command, you will be prompted to install `create-react-app` first. Key in `y` for yes and press enter to continue.
-
-## Starting the project
-
-```bash
-npm start
-```
-
-It should automatically open the page `http://localhost:3000` in your browser.
-
-If you encounter an error where `package.json` could not be read, it is likely that you are running the command in the wrong directory.
-
-```
-npm ERR! code ENOENT
-npm ERR! syscall open
-npm ERR! path C:\Users\nsh8\Documents\webdev\package.json
-npm ERR! errno -4058
-npm ERR! enoent Could not read package.json: Error: ENOENT: no such file or directory, open 'C:\Users\nsh8\Documents\webdev\package.json'
-npm ERR! enoent This is related to npm not being able to find a file.
-```
-
-## Stopping the project
-
-At anytime we wish to stop running the development server, we can do so with
-
-ctrl+c
-
-On Windows, you will be further prompted if you wish to `Terminate batch job (Y/N)`.
-
-Key in `y` for yes and press enter to continue in order to stop the development server.
-
-### What is http://localhost:3000
-
-`http` is the protocol we use to view websites.
-
-`localhost` is the hostname. In this case, `localhost` means that we are accessing a resources locally on our own computer.
-
-`:3000` is the port. The webserver that react has created will run on port 3000 by default, but other numbers may be used if port 3000 is not available.
+React with Create React App
+TODO change to Next.JS, separate setup instructions
 
 ## Looking at the files created
 
@@ -186,7 +142,7 @@ If we wish to use it multiple times, we can easily just repeat the declaration o
 
 ## Props
 
-Similar to how javascript functions can take in arguments, React components can take in properties (props)
+Similar to how javascript functions can take in arguments, React components can take in properties (props).
 
 `App.js`
 
@@ -217,3 +173,29 @@ This is similar to how HTML elements take in attributes
 ```
 
 On top of strings, you can also pass in objects and lists.
+
+```jsx
+function Component(name, colors) {
+  console.log(name);
+  console.log(colors);
+  return <></>;
+}
+
+function App() {
+  return (
+    <>
+      <Component name="Bob" colors={["red", "orange", "blue"]} />
+    </>
+  );
+}
+```
+
+## Comparing React.js to vanilla JS
+
+Modern frontend frameworks allow us to manipulate the DOM without using JS.
+
+For React.js in particular, it uses a declarative syntax compared to how DOM manipulation is usually done imperatively.
+
+TODO can take Next.js example comparing vanilla JS DOM manipulation and using React
+
+TODO explain how does JSX get run magically, as a tradeoff to not needing to repeat DOm manipulation code
