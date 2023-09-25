@@ -1,0 +1,19 @@
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 42px;
+}
+
+.clicks-wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+button {
+  padding: 20px;
+  border-radius: 5px;
+  font-size: inherit;
+}

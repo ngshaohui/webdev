@@ -100,6 +100,12 @@ https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/
 
 # Appendix
 
+## Browser storage stress test tool
+
+This tool allows us to write dummy data to our browser storage to stress test it.
+
+https://demo.agektmr.com/storage/
+
 ## Cookies from other origins
 
 Why do we see cookies from website B when we open the storage for website A?
@@ -140,3 +146,7 @@ cookies and local storage
 - Understand what data is stored on the browser
 - Understand how to retrieve data stored on the browser
 - Understand different types of storage on the browser
+
+## NP homepage dark mode
+
+Stored in cookies under `NP_ContrastStatus` attribute.

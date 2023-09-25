@@ -531,6 +531,33 @@ const ls = [...st];
 console.log(ls); // ['a', 'p', 'p', 'l', 'e']
 ```
 
+## Destructuring objects and lists
+
+An object can be destructured and have its properties assigned to variables.
+
+```js
+const car = {
+  make: "Ford",
+  model: "Mustang",
+  year: 1969,
+};
+const { carModel: model, year } = car;
+console.log(carModel); // "Mustang"
+console.log(year); // 1969
+```
+
+`const { carModel: model }` declares a `const` variable named `carModel`, assigning it to the value of `car.model`.
+
+`const { year }` is a shorthand for declaring a `const` variable named `year`, assigning it to the value of `car.year`.
+
+The same can be done for lists.
+
+```js
+const ls = [0, 1, 2];
+const [first, second, third] = ls;
+console.log(second); // 1
+```
+
 ## Semicolons `;`
 
 Do note that semicolons are optional.

@@ -27,6 +27,44 @@ Similar to how Python has a package manager PIP, NodeJS comes with a package man
 
 NPM is automatically bundled when installing NodeJS, since it grants us access to this huge array of JS libraries that can enhance our development process.
 
+## `package.json`
+
+Each NPM project comes with a `package.json` file.
+
+We can either create one on our own, or it gets created for us when we initialise our folder as a NPM project.
+
+```bash
+npm init --yes # initialise NPM project with default configuration
+```
+
+A
+
+## Installing libraries
+
+NPM can be used to install JS libraries for use in our project.
+
+```bash
+npm install lodash # install the lodash library
+```
+
+This will fetch the package `lodash` from the NPM repository, and install it to the `node_modules` folder.
+
+The installed package will be added to the list of dependencies in `package.json`.
+
+## `node_modules` folder
+
+When we install packages using NPM, they get added to the `node_modules` folder.
+
+When sharing our repository's source code, we should not include the `node_modules` folder as this consists of code that is already publicly available.
+
+Likewise when cloning existing NPM projects, they do not come with `node_modules`.
+
+This folder can be reproduced from the dependencies specified in the `package.json` file.
+
+```bash
+npm install # install packages specified in package.json
+```
+
 ## Supply chain attacks
 
 Depending on external libraries that we do not own will inadvertently increase the attack surface area of applications.
