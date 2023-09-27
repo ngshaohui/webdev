@@ -18,25 +18,25 @@ By the end of the course, students should have a good understanding of the anato
 
 ## 2023 S2 Calendar
 
-| Week | Events                           | Topics                 |
-| ---- | -------------------------------- | ---------------------- |
-| 1    |                                  | HTML                   |
-| 2    |                                  | HTML and CSS           |
-| 3    |                                  | HTML and JS            |
-| 4    |                                  | JS                     |
-| 5    | Whitespace; Monday Deepavali OIL | CSS: responsive design |
-| 6    |                                  |                        |
-| 7    |                                  |                        |
-| 8    |                                  |                        |
-| 9    | Common Test                      | -                      |
-| 10   | Break                            | -                      |
-| 11   | Break; Monday Christmas          | -                      |
-| 12   | Monday New Year's                |                        |
-| 13   |                                  |                        |
-| 14   | Whitespace                       | -                      |
-| 15   | TBC                              |                        |
-| 16   | TBC                              |                        |
-| 17   |                                  |                        |
+| Week | Events                           | Topics                                                   |
+| ---- | -------------------------------- | -------------------------------------------------------- |
+| 1    |                                  | HTML elements                                            |
+| 2    |                                  | Styling elements with CSS                                |
+| 3    |                                  | Making pages interactive with JS                         |
+| 4    |                                  | JS essentials, JS libraries                              |
+| 5    | Whitespace; Monday Deepavali OIL | Responsive CSS with Flexbox and Grid                     |
+| 6    |                                  | Modern webapp anatomy, NPM, Node.js                      |
+| 7    |                                  | React anatomy, Next.js project structure                 |
+| 8    |                                  | React methodology, state management, client-side routing |
+| 9    | Common Test                      | -                                                        |
+| 10   | Break                            | -                                                        |
+| 11   | Break; Monday Christmas          | -                                                        |
+| 12   | Monday New Year's                | React (spillover content, if any) / Consultation         |
+| 13   |                                  | Consultation                                             |
+| 14   | Whitespace                       | Consultation                                             |
+| 15   | TBC                              | Consultation                                             |
+| 16   | TBC                              | Consultation                                             |
+| 17   |                                  | Presentation                                             |
 
 No lesson on whitespace weeks, may have simple assignment.
 
