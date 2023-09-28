@@ -16,12 +16,6 @@ TODO figure out why `--no-import-alias` does not work
 
 https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
 
-## Running in development mode
-
-```bash
-npm run dev
-```
-
 ### `create-next-app` bootstrapping tool
 
 Bootstrapping tools are tools that help us create a ready-made application, instead of having to assemble everything together by ourselves.
@@ -37,6 +31,48 @@ npm install next@latest react@latest react-dom@latest
 ```
 
 Doing this would also mean we need to create our own entrypoint file `app/page.js`, which is desirable if we already know what we want to start with and do not want to spend time removing unwanted code.
+
+## Project structure
+
+Upon initialising the project, it should have the following project structure:
+
+```
+my-app/
+├─ .next/
+├─ app/
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.js
+│  ├─ page.js
+│  ├─ page.module.css
+├─ node_modules/
+├─ public/
+│  ├─ next.svg
+│  ├─ vercel.svg
+├─ .eslintrc.json
+├─ .gitignore
+├─ jsconfig.json
+├─ next.config.json
+├─ package-locak.json
+├─ package.json
+├─ README.md
+```
+
+### Rename JSX files from `.js` to `.jsx`
+
+Rename the file at `my-app/app/page.js` to `my-app/app/page.jsx`, changing the file extension.
+
+Do the same for `my-app/app/layout.js`, renaming it to `my-app/app/layout.jsx`.
+
+While it is possible to have a JSX component in a file with a `.js` extension, we should opt to use `.jsx` whenever possible.
+
+This gives us better clarity in the purpose of the file, to know at a glance that it exports a JSX component.
+
+## Running in development mode
+
+```bash
+npm run dev
+```
 
 # Appendix
 

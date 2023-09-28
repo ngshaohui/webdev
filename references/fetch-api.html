@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fetch API</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <input
+        id="word"
+        autocomplete="off"
+        autofocus
+        placeholder="word"
+        type="text"
+      />
+      <input type="submit" value="Get definition" />
+    </form>
+    <br />
+    <div id="result"></div>
+
+    <script>
+      document.querySelector("#form").onsubmit = () => {
+        const resDiv = document.querySelector("#result");
+        const word = document.querySelector("#word").value;
+
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+          .then((response) => response.json())
+          .then((data) => {
+            resDiv.textContent = data[0].meanings[0].definitions[0].definition;
+          })
+          .catch(() => {
+            resDiv.textContent = "There was an error.";
+          });
+
+        return false; // prevent form submission
+      };
+    </script>
+  </body>
+</html>
