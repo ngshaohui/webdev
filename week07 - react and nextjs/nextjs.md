@@ -1,5 +1,7 @@
 # NextJS
 
+This module shall be using Next.js 13.
+
 ## Agenda
 
 - have a in-class setting up tutorial and live coding demonstration to generate components
@@ -9,12 +11,24 @@
 ## Setting up
 
 ```bash
-npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind --no-import-alias
+npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind
 ```
 
-TODO figure out why `--no-import-alias` does not work
-
 https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
+
+When prompted to install `create-next-app`, press enter to continue.
+
+```
+C:\Users\nsh8\Documents>npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind --no-import-alias
+Need to install the following packages:
+  create-next-app@13.5.3
+Ok to proceed? (y)
+? Would you like to customize the default import alias? » No / Yes
+```
+
+When prompted to customize the default import alias, press enter to select `no` as the default.
+
+Note that there is no option to select an option for `import-alias` from the terminal, as referenced from the source code.
 
 ### `create-next-app` bootstrapping tool
 
@@ -70,9 +84,41 @@ This gives us better clarity in the purpose of the file, to know at a glance tha
 
 ## Running in development mode
 
+Use `npm run dev` to start the development server.
+
 ```bash
 npm run dev
 ```
+
+By default, Next.js will attempt to start a dev server on port 3000.
+
+We can visit http://localhost:3000 on our browser to view our web app.
+
+```
+C:\Users\nsh8\Documents\webdev\temp\my-app>npm run dev
+
+> my-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 13.5.3
+  - Local:        http://localhost:3000
+```
+
+### Hot module reloading
+
+After making any changes, remember to save the file that you are editing.
+
+The changes be reflected without having to refresh the page, or restarting the development server.
+
+## Entrypoint
+
+```
+my-app/
+├─ app/
+│  ├─ page.jsx
+```
+
+To start making changes to the app, edit the file `my-app/app/page.jsx`.
 
 # Appendix
 

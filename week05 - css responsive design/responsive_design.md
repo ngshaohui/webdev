@@ -15,13 +15,11 @@ https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content
 
 Need to point out how we have inline and block elements
 
-## Flexbox
+## Flexbox and grid
 
-TODO
-
-```html
-
-```
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://ishadeed.com/article/grid-layout-flexbox-components/
 
 ## Media queries
 

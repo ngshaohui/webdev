@@ -226,51 +226,6 @@ Also, we will need to supply a function handler instead of a function body to ou
 </script>
 ```
 
-## Component state
-
-### Naive way to keep track of state (does not work)
-
-```jsx
-export default function App() {
-  let clicks = 0;
-  function increaseVal() {
-    alert(`clicked ${clicks}`);
-    clicks++;
-  }
-  return <div onClick={increaseVal}>clicks: {clicks}</div>;
-}
-```
-
-Note that each time we click on the `div`, the value of `clicks` appears to increment but the value shown on the page remains the same.
-
-This is because React does not know that we want to update the DOM, even when `clicks` changes.
-
-### `useState` to trigger re-renders
-
-In order to tell React to update the DOM when a value changes, we need to use a React hook `useState`.
-
-```jsx
-import { useState } from "react";
-
-export default function App() {
-  const [clicks, setClicks] = useState(0); // set initial value to 0
-  function increaseVal() {
-    setClicks((prev) => prev + 1);
-  }
-  return <div onClick={increaseVal}>clicks: {val}</div>;
-}
-```
-
-The function `useState` returns an array containing 2 items.
-
-`clicks` is the variable that contains the current state, and `setClicks` is a function that is used to set the value of the variable `clicks`.
-
-Since we pass the value `0` to `useState`, the initial value of `clicks` will be set to 0.
-
-### `setState`
-
-TODO explain setState
-
 # Appendix
 
 ## `.js` vs `.jsx` for JSX files
@@ -283,7 +238,7 @@ However, this support might not be universal and we will have to use `.jsx` with
 
 In this course, we will want our JSX markup to have the `.jsx` extension for clarity in the file's purpose.
 
-## Hypothetical breakdown of NP ICT homepage into components
+## Hypothetical breakdown of NP homepage into components
 
 ```jsx
 function SchoolHomePage() {
