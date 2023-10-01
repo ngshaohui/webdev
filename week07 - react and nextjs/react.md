@@ -85,6 +85,10 @@ export default function App() {
 }
 ```
 
+TODO talk about export default
+
+If we want the component to be used somewhere else, we need to export it.
+
 ## Components
 
 Each component should be a logical grouping of HTML elements.
@@ -215,7 +219,7 @@ export default function App() {
 
 Unlike in HTML, the event listener is named using camelCase.
 
-Also, we will need to supply a function handler instead of a function body to our listener.
+We will also need to supply a function instead of a function call to our listener.
 
 ```html
 <button onclick="handleClick()">Click me</button>

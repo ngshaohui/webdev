@@ -73,6 +73,8 @@ This is because React does not know that we want to update the DOM, even when `c
 
 In order to tell React to update the DOM when a value changes, we need to use a React hook `useState`.
 
+`CounterSimple.jsx`
+
 ```jsx
 import { useState } from "react";
 
@@ -81,51 +83,102 @@ export default function App() {
   function increaseVal() {
     setClicks((prev) => prev + 1);
   }
-  return <div onClick={increaseVal}>clicks: {val}</div>;
+  function reset() {
+    setClicks(0);
+  }
+  return (
+    <div>
+      <button onClick={increaseVal}>increment</button>
+      <button onClick={reset}>reset</button>
+      clicks: {clicks}
+    </div>
+  );
 }
 ```
-
-The function `useState` returns an array containing 2 items.
-
-`clicks` is the variable that contains the current state, and `setClicks` is a function that is used to set the value of the variable `clicks`.
 
 Since we pass the value `0` to `useState`, the initial value of `clicks` will be set to 0.
 
-# Appendix
+The function `useState` returns an array containing 2 items.
 
-## Functional programming
+`clicks` is the variable that contains the current state.
 
-In computing, a function is pure when it does not result in any side effects.
+`setClicks` is a function that is used to set the value of the variable `clicks`.
 
-```js
-// impure, side effects
-const xs = [1, 2, 3];
-function multiply2(ls) {
-  for (let i = 0; i < ls.length; i++) {
-    ls[i] = ls[i] * 2;
+The `setState` function can either take in a value or a function.
+
+### Isolated component states
+
+Each component maintains its own independent state.
+
+`CounterRepeated.jsx`
+
+```jsx
+import { useState } from "react";
+
+function Clicker() {
+  const [clicks, setClicks] = useState(0); // set initial value to 0
+  function increaseVal() {
+    setClicks((prev) => prev + 1);
   }
+  return <button onClick={increaseVal}>clicks: {clicks}</button>;
 }
-multiply2(xs);
-console.log(xs); // [2, 4, 6]
 
-// pure, no side effects
-const xs = [1, 2, 3];
-function multiply2(ls) {
-  return ls.map((num) => num * 2);
+export default function App() {
+  const [clicks, setClicks] = useState(0); // set initial value to 0
+  function handleClick() {
+    setClicks((prev) => prev + 1);
+  }
+  return (
+    <div onClick={handleClick}>
+      <Clicker />
+      <Clicker />
+      Total clicks: {clicks}
+    </div>
+  );
 }
-const ys = multiply2(xs);
-console.log(xs); // [1, 2, 3]
-console.log(ys); // [2, 4, 6]
-
-// pure, same input always produces same output
-const squareNum = (num) => num * num;
-const isEven = (num) => num % 2 == 0;
-const identity = (input) => input;
-
-// impure, same input might produce different output
-const randomNum = (maxNum) => Math.random() * maxNum;
 ```
 
-### Functional components
+There are 3 components above, the `App` component, as well as 2 `Clicker` components.
 
-A component is pure if it does not contain any hooks.
+When the individual components are clicked, their click count increases independently of the other.
+
+# Appendix
+
+## Update state based on previous state
+
+Both methods below are able to increment the `clicks` counter by 1.
+
+```jsx
+setClicks((prev) => prev + 1);
+setClicks(clicks + 1);
+```
+
+However, we are not able to call `setClicks(clicks + 1)` sequentially in the same function to increment its value.
+
+```jsx
+function incrementThrice() { // does not work
+  setClicks(clicks + 1); // setClicks(0 + 1)
+  setClicks(clicks + 1); // setClicks(0 + 1)
+  setClicks(clicks + 1); // setClicks(0 + 1)
+}
+```
+
+Each time `incrementThrice` is called, it will only increment the value once.
+
+When a `setValue` function is being called, React will only execute this at the end `incrementThrice`, before it does its next render.
+
+This means that each time `clicks` was being referenced within `incrementThrice`, it referred to the same value.
+
+Whenever we want to rely on a previous state, we should use a function as the argument instead.
+
+```jsx
+function incrementThrice() { // does not work
+  setClicks((prev) => prev + 1); // setClicks(0 + 1)
+  setClicks((prev) => prev + 1); // setClicks(1 + 1)
+  setClicks((prev) => prev + 1); // setClicks(2 + 1)
+}
+```
+
+These functions specify that it wants React to calculate the next state based on the previous state.
+
+https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state

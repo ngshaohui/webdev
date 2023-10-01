@@ -5,13 +5,13 @@ export default function Counter() {
   const [counter, setCounter] = useState(0);
   const [numClicks, setNumClicks] = useState(0);
 
-  const handleMinusClick = () => {
+  function handleMinusClick() {
     setCounter(counter - 1);
-  };
+  }
 
-  const handlePlusClick = () => {
+  function handlePlusClick() {
     setCounter(counter + 1);
-  };
+  }
 
   useEffect(() => {
     const handlePageClick = () => {
