@@ -240,7 +240,7 @@ This is possible as their tooling has been set up to expect JSX markup within `.
 
 However, this support might not be universal and we will have to use `.jsx` with different tooling, such as the Vite bundler.
 
-In this course, we will want our JSX markup to have the `.jsx` extension for clarity in the file's purpose.
+In this module, we will want our JSX markup to have the `.jsx` extension for clarity in the file's purpose.
 
 ## Hypothetical breakdown of NP homepage into components
 

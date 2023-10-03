@@ -8,7 +8,7 @@ Each browser comes with a JS engine to allow a webpage to execute Javascript.
 
 ## Variables
 
-For the duration of this course, we shall avoid using `var` to declare variables and opt to use `let` and `const` instead.
+For the duration of this module, we shall avoid using `var` to declare variables and opt to use `let` and `const` instead.
 
 ```js
 const foo = 27;
@@ -42,12 +42,6 @@ console.log(foo); // bye
 ## `console.log`
 
 The `console.log` function prints an output to the console. This is synonymous to the `print` function in Python or the `printf` function in `C` programming.
-
-## Equality
-
-When checking for equality between 2 values, always use the triple equals `===` to compare them instead of double equals `==`.
-
-Since JS is a weakly typed language, we need to ensure that we always use strict equality checks to prevent unwarranted type conversions.
 
 ## Comments
 
@@ -279,6 +273,12 @@ const st = `There are ${quantity * 2} ${product}`;
 console.log(st); // There are 54 apples
 ```
 
+## Equality
+
+When checking for equality between 2 values, always use the triple equals `===` to compare them instead of double equals `==`.
+
+Since JS is a weakly typed language, we need to ensure that we always use strict equality checks to prevent unwarranted type conversions.
+
 ## Objects (part 2)
 
 Object values can also be other objects, as well as functions.
@@ -319,9 +319,9 @@ console.log(report.data.attributes.title); // "XSS in login form"
 
 ```js
 const foo = 27;
-if (foo == 7) {
+if (foo === 7) {
   console.log("foo is 7");
-} else if (foo == 42) {
+} else if (foo === 42) {
   console.log("foo is 42");
 } else {
   console.log(`foo is ${foo}`);
@@ -336,7 +336,7 @@ It is best used in place of conditions involving only `if` and `else` statements
 
 ```js
 const foo = 27;
-if (foo == 7) {
+if (foo === 7) {
   console.log("foo is 7");
 } else {
   console.log(`foo is ${foo}`);
@@ -347,23 +347,23 @@ The equivalent for the above would be:
 
 ```js
 const foo = 27;
-foo == 7 ? console.log("foo is 7") : console.log(`foo is ${foo}`);
+foo === 7 ? console.log("foo is 7") : console.log(`foo is ${foo}`);
 ```
 
 It is possible to use the ternary operator for more complicated statements, but it risks becoming unreadable.
 
 ```js
-if (foo == 7) {
+if (foo === 7) {
   console.log("foo is 7");
-} else if (foo == 42) {
+} else if (foo === 42) {
   console.log("foo is 42");
 } else {
   console.log(`foo is ${foo}`);
 }
 
-foo == 7
+foo === 7
   ? console.log("foo is 7")
-  : foo == 42
+  : foo === 42
   ? console.log("foo is 42")
   : console.log(`foo is ${foo}`);
 ```
@@ -374,7 +374,7 @@ Since template literals can take JS expressions, it is possible to use ternary o
 
 ```js
 function greet(name = "") {
-  return `Hello ${name !== "" ? name : "somebody"}`;
+  return `Hello ${name !=== "" ? name : "somebody"}`;
 }
 greet("bob"); // Hello bob
 greet(); // Hello somebody
@@ -570,7 +570,7 @@ You are encouraged to adopt camelCase convetion as much as possible, but other s
 
 ## Usage of `this`
 
-This course shall avoid the use of `this` as much as possible since OOP is still being taught.
+This module shall avoid the use of `this` as much as possible since OOP is still being taught.
 
 ## Nested objects
 

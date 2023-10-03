@@ -6,7 +6,7 @@ Draft content for client-side scripting
 
 This module focuses on the client-side aspect of web applications. It introduces students to the core concepts of HTML/CSS/JS, moving on to the modern web development landscape such as working with npm and web frameworks.
 
-By the end of the course, students should have a good understanding of the anatomy of web applications, serving as a solid foundation for pursuing web development or pentesting in the future.
+By the end of the module, students should have a good understanding of the anatomy of web applications, serving as a solid foundation for pursuing web development or pentesting in the future.
 
 ## Module learning objectives
 
@@ -46,3 +46,10 @@ No lesson on whitespace weeks, but might have simple assignment for week 5.
 - Responsive web design
   - CSS Flexbox and Grid
 - Browser based development environments
+
+## TODO
+
+- data fetching, finish up
+- import/export modules (cover this before react)
+- slides for week08 react and nextjs
+- slides for week12 react

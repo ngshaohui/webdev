@@ -5,7 +5,7 @@ export default function App() {
   const [word, setWord] = useState("");
   const [definitions, setDefinitions] = useState([]);
 
-  const search = (event) => {
+  function search(event) {
     event.preventDefault();
     setIsLoading(true);
 
@@ -25,9 +25,9 @@ export default function App() {
       .finally(() => {
         setIsLoading(false);
       });
-  };
+  }
 
-  const showDefinitions = (meanings) => {
+  function showDefinitions(meanings) {
     if (meanings.length === 0) {
       return <div>No definitions found</div>;
     }
@@ -42,11 +42,11 @@ export default function App() {
         </ol>
       </div>
     ));
-  };
+  }
 
-  const setInput = (event) => {
+  function setInput(event) {
     setWord(event.target.value);
-  };
+  }
 
   return (
     <div>

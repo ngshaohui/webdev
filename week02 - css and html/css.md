@@ -499,7 +499,7 @@ p {
 
 ## Choosing colors
 
-While the artistic design of webpages is out of scope for this course, we can generally rely on a number of color palette generation sites as a starting point.
+While the artistic design of webpages is out of scope for this module, we can generally rely on a number of color palette generation sites as a starting point.
 
 One such site is Color Hunt, a free website that offers a number of curated color palettes that can be themed around a particular color.
 

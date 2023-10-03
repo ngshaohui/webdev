@@ -82,6 +82,26 @@ While it is possible to have a JSX component in a file with a `.js` extension, w
 
 This gives us better clarity in the purpose of the file, to know at a glance that it exports a JSX component.
 
+### `"use client" directive`
+
+On top of `my-app/app/page.jsx`, add the `"use client"` directive as follows:
+
+```jsx
+"use client";
+
+// rest of page.jsx
+```
+
+For every new `page.jsx` that we subsequently create, ensure that you add the `"use client"` directive at the top.
+
+#### Client components and server components.
+
+By default, Next.js 13 uses server side rendering with React server side components.
+
+Server side rendering is an optimisation that Next.js tries to make to speed up the loading of pages by pre-rendering components on the server before they get sent to the client.
+
+Since server side components are out of scope for this module, we will need to declare the `"use client"` directive to tell Next.js to use client components instead.
+
 ## Running in development mode
 
 Use `npm run dev` to start the development server.
