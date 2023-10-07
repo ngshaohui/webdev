@@ -121,14 +121,6 @@ Here are some commonly used elements you're likely to encounter:
 - `input`
 - `table`
 
-## Headers
-
-TODO
-
-## Text formatters
-
-TODO
-
 ## Lists
 
 We can use lists to denote a series of items.
@@ -180,6 +172,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
 
 Some examples are `id` and `class`, which allows us to specify a unique or group identifier for our elements to be selected with CSS and JS.
 
+`lists.html`
+
 ```html
 <ol>
   <li id="csf" class="course-item">Cybersecurity & Digital Forensics (CSF)</li>
@@ -188,6 +182,54 @@ Some examples are `id` and `class`, which allows us to specify a unique or group
   <li id="it" class="course-item">Information Technology</li>
 </ol>
 ```
+
+## Section heading
+
+Section heading is used to denote to denote the start of a section in a HTML page.
+
+There are 6 sizes for section heading, ranging from 1 (largest) to 6 (smallest).
+
+`h1` is usually used to denote the start of the section, and each increment used to denote a subsection.
+
+`section-heading.html`
+
+```html
+<h1>Countries</h1>
+
+<h2>Asia</h2>
+<h3>Singapore</h3>
+<p>Sunny island</p>
+
+<h2>North America</h2>
+<h3>Mexico</h3>
+<p>Tacos</p>
+```
+
+## Text formatters
+
+HTML elements can also be used to change how the text is displayed on the browser.
+
+- `<strong>` element indicates that its content has "strong" importance, seriousness, or urgency
+  - browsers usually bold the text
+- `<em>` element to place emphasis on text
+  - browsers usually italicise the text
+
+`text-formatters.html`
+
+```html
+<p>Two roads diverged in a <strong>yellow wood,</strong></p>
+<p>And sorry <em>I could not</em> travel both</p>
+```
+
+### `<b>` and `<i>`
+
+Do note that the `<b>` and `<i>` elements also perform the same formatting as the ones above, but are discouraged.
+
+HTML5 encourages developers to use semantic elements, but making an element "bold" is an explicit declaration.
+
+Describing the element as `em` leaves it to the renderer to decide how to best place emphasis on it.
+
+This allows devices such as screen readers (for the visually impaired) to have audio cues for its users as an alternative.
 
 ## Images
 

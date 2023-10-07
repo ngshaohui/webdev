@@ -200,7 +200,7 @@ p + p + p + p + p {
 
 ### Child element selector
 
-TODO: explain what constitute child elements.
+A child element is an element that has been nested within another element `<parent><child></parent>`.
 
 We can specify child elements by having specifying elements separated with a space.
 
@@ -534,16 +534,15 @@ This allows us to create more extensible CSS specifiers for our elements.
     border: 1px solid;
     padding: 16px;
     border-radius: 24px;
+    color: #fff;
   }
 
   .btn[data-colo="primary"] {
     background-color: #0d6efd;
-    color: #fff;
   }
 
   .btn[data-colo="danger"] {
     background-color: #dc3545;
-    color: #fff;
   }
 
   .btn[data-size="medium"] {
