@@ -391,11 +391,11 @@ Hello world!
 
 ### Missing closing tags
 
+<!-- prettier-ignore -->
 ```html
 <h1>
   Hello world!
-  <h2>Bye</h2>
-</h1>
+  <h2>Bye
 ```
 
 ### Mismatched case
