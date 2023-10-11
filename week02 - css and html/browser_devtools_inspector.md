@@ -36,11 +36,3 @@ This shows a comprehensive view of all the CSS rules that have been applied to a
 The elements inspector can help us figure out why the elements are not being laid out the way we envisioned.
 
 It also gives us a quick way to preview what additional styles we need to apply to achieve it.
-
-## Console
-
-The console allows us to interact with JS on the page.
-
-We are able to evaluate JS expressions quickly, without having to create a JS file and loading the script through a HTML file.
-
-We can also view any message outputs from our programs, such as general logs or error messages.

@@ -41,6 +41,15 @@ By the end of the module, students should have a good understanding of the anato
 
 No lesson on whitespace weeks, but might have simple assignment for week 5.
 
+## Components
+
+| Component              | Weightage | Release | Due     |
+| ---------------------- | --------- | ------- | ------- |
+| Continual assessment   | 20%       | -       | -       |
+| Research on JS library | 10%       | Week 4  | Week 6  |
+| Quiz                   | 20%       | Week 9  | -       |
+| Group project          | 50%       | Week 7  | Week 17 |
+
 ## Possible topics for whitespace
 
 - Responsive web design

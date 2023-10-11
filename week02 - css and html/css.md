@@ -599,3 +599,21 @@ Besides specifying colors, it is possible to include a URL to link to an externa
 The above example uses a base64 encoded image as its background.
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/url
+
+## Further reading
+
+### CSS variables
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+### Media queries for responsive design
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+
+### Flexbox for aligning content
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox
+
+### Grid for aligning content
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
