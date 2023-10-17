@@ -3,13 +3,15 @@
   <head>
     <title>Child selector</title>
     <style>
-      div > p {
-        color: blue;
+      #top > p {
+        background-color: honeydew;
       }
     </style>
   </head>
   <body>
-    <p>This is not blue</p>
-    <div><p>But this is blue</p></div>
+    <div id="top">
+      <div><p>This is not honeydew</p></div>
+      <p>But this is honeydew</p>
+    </div>
   </body>
 </html>
