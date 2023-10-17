@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Attribute selector</title>
+    <style>
+      /* Attribute contains specific value */
+      a[href="https://www.np.edu.sg/"]
+      {
+        background-color: yellowgreen;
+      }
+      /* Attribute exists (disregards the value) */
+      input[type] {
+        background-color: deepskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="https://www.np.edu.sg/" target="_blank">Ngee Ann Poly</a>
+      </li>
+      <li>
+        <a href="https://www.sp.edu.sg/" target="_blank">Singapore Poly</a>
+      </li>
+      <li><input /></li>
+      <li><input type="email" /></li>
+      <li><input type /></li>
+    </ul>
+  </body>
+</html>

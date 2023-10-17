@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Descendant selector</title>
+    <style>
+      /* p is not a child of top-div */
+      div#top-div > p {
+        background-color: rebeccapurple;
+      }
+      /* but it is a descendant */
+      div#top-div p {
+        background-color: lightsteelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top-div">
+      Deep inside
+      <div>
+        a forest of divs
+        <div>
+          there lived
+          <p>A PARAGRAPH</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

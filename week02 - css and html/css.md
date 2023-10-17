@@ -511,6 +511,36 @@ https://coolors.co/
 
 This saves us the time of having to think about what colors go together, saving us from overly plain websites or clashing color schemes.
 
+## Fetching external data with CSS
+
+Besides specifying colors, it is possible to include a URL to link to an external resource.
+
+The URL given can also be in the form of a base64 image.
+
+```html
+<style>
+  div {
+    height: 200px;
+    width: 200px;
+  }
+  div#first {
+    background: url("https://placekitten.com/g/200/300");
+  }
+  div#second {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII=");
+  }
+</style>
+<div id="first">
+  Here is a cat picture taken from the internet. It is displayed as the
+  background to this div
+</div>
+<div id="second">
+  We can also use base64 to display images, this image is just a boring grey box
+</div>
+```
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/url
+
 ## Data attributes
 
 HTML elements can be extended with the use of custom data attributes.
@@ -568,37 +598,6 @@ Both methods will work, but feel free to use one over the other if it conveys be
 https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
-
-## Fetching external data with CSS
-
-TODO better example, include example with actual url
-
-Besides specifying colors, it is possible to include a URL to link to an external resource.
-
-```html
-<style>
-  div {
-    height: 200px;
-    width: 200px;
-  }
-  div#first {
-    background: no-repeat left
-      url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII=");
-  }
-  div#second {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII=");
-  }
-</style>
-<div></div>
-<div></div>
-<img
-  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAANQTFRFf39/kMobIwAAABNJREFUGBljGAWjYBSMglFAVwAABXgAAdxFAhsAAAAASUVORK5CYII="
-/>
-```
-
-The above example uses a base64 encoded image as its background.
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/url
 
 ## Further reading
 
