@@ -5,26 +5,22 @@
   </head>
   <body>
     <section>
-      <label for="name">Name (Up to 8 characters):</label>
-
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        maxlength="8"
-        size="10"
-      />
+      <label for="name">Input</label>
+      <input type="text" id="name" />
       <button id="btn">Enter</button>
+
       <div id="output"></div>
     </section>
 
     <script>
-      function handleClick() {
+      function handleClick(event) {
         const inputVal = document.querySelector("#name").value;
         document.querySelector("#output").textContent = inputVal;
       }
       document.querySelector("#btn").addEventListener("click", handleClick);
+      /*
+      OR Get them to replace the text content within the elements when a button is pressed
+      */
     </script>
   </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input element with form</title>
+  </head>
+  <body>
+    <form id="form">
+      <label for="name">Enter numbers only: </label>
+      <input type="text" name="name" id="name" required pattern="[0-9]+" />
+      <button>Submit</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+      function handleSubmit() {
+        const inputVal = document.querySelector("#name").value;
+        document.querySelector("#output").textContent = inputVal;
+        return false; // prevent form submission
+      }
+
+      document.querySelector("#form").onsubmit = handleSubmit;
+    </script>
+  </body>
+</html>

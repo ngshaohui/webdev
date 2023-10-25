@@ -47,7 +47,7 @@ No lesson on whitespace weeks, but might have simple assignment for week 5.
 | ---------------------- | --------- | ------- | ------- |
 | Continual assessment   | 20%       | -       | -       |
 | Research on JS library | 10%       | Week 4  | Week 6  |
-| Quiz                   | 20%       | Week 9  | -       |
+| Quiz                   | 20%       | Week 6  | -       |
 | Group project          | 50%       | Week 7  | Week 17 |
 
 ## Possible topics for whitespace
@@ -62,3 +62,7 @@ No lesson on whitespace weeks, but might have simple assignment for week 5.
 - import/export modules (cover this before react)
 - slides for week08 react and nextjs
 - slides for week12 react
+
+- js
+need to move some js topics from week 4 to 3
+

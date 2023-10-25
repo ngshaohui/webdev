@@ -4,7 +4,6 @@ The `input` element is a way for users to perform interactions which requires th
 
 ```html
 <label for="name">Name (4 to 8 characters):</label>
-
 <input
   type="text"
   id="name"
@@ -53,11 +52,29 @@ When requiring user inputs, it would be good to first check how the desired inpu
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
 
-## Client side validation
+# Appendix
 
-If a specific type of input is needed, we can add client side validation to help guide the user give the desired input.
+## Client-side validation
 
-TODO example
+If a specific type of input is needed, we can add client-side validation to help guide the user give the desired input.
+
+```html
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
+  minlength="4"
+  maxlength="8"
+  size="10"
+/>
+```
+
+For our input element above, `required`, `minlength`, and `maxlength` are attributes which enable client-side validation.
+
+If validation is not fulfilled, this will cause input fields in `form` elements to display a warning, and prevent the form from submitting.
+
+However, do note that these attributes may be removed using the devtools, bypassing "validation".
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#client-side_validation
 

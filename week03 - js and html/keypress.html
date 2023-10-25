@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keypress</title>
+    <style>
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #output {
+        font-size: 3em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div id="output"></div>
+    </div>
+
+    <script>
+      function logKey(event) {
+        const keyPress = event.code
+        document.querySelector("#output").textContent = keyPress;
+      }
+      document.addEventListener("keydown", logKey);
+    </script>
+  </body>
+</html>
