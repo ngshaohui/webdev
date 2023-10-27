@@ -52,6 +52,14 @@ When requiring user inputs, it would be good to first check how the desired inpu
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
 
+## Obtaining input value
+
+We may obtain the value from the input element from its `value` property.
+
+```js
+const inputVal = document.querySelector("#name").value;
+```
+
 # Appendix
 
 ## Client-side validation

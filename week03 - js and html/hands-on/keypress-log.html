@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keypress</title>
+    <style>
+      #output {
+        font-size: 3em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div id="output"></div>
+      <!-- add the key that was pressed to the list below -->
+      <ol id="list"></ol>
+    </div>
+
+    <script>
+      function logKey(event) {
+        const keyPress = event.code;
+        document.querySelector("#output").textContent = keyPress;
+
+        // TODO: create a list item
+        // TODO: create a text node
+        // TODO: add the text node to the list item
+        // TODO: add the list item to #list
+      }
+      document.addEventListener("keydown", logKey);
+    </script>
+  </body>
+</html>

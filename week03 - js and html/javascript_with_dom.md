@@ -302,6 +302,8 @@ function eggs() {
 
 ## Adding elements to the DOM
 
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Safely_inserting_external_content_into_a_page#dom_node_creation_methods
+
 To add an element, it first needs to be created with `createElement`.
 
 If we wish to add text to the element, this can be done using `createTextNode`.
@@ -337,12 +339,8 @@ btn.addEventListener("click", addItem);
 To delete an element, we simply need to select it and call its `remove` method.
 
 ```html
-<button id="btn">
-  Remove header
-</button>
-<h1 id="header">
-  Now you see me
-</h1>
+<button id="btn">Remove header</button>
+<h1 id="header">Now you see me</h1>
 ```
 
 ```js

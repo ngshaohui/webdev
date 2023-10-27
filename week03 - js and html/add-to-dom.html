@@ -10,13 +10,11 @@
       <li>Default item</li>
     </ol>
     <script>
-      const ls = document.querySelector("#list");
-
       function addItem() {
         const newItem = document.createElement("li");
         const textContent = document.createTextNode("Button added item");
         newItem.appendChild(textContent);
-        ls.appendChild(newItem);
+        document.querySelector("#list").appendChild(newItem);
       }
 
       const btn = document.querySelector("#add");
