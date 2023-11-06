@@ -25,7 +25,7 @@
       btn.addEventListener("click", function () {
         // change webpage's background to a random color
         const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-        document.body.style.backgroundColor = rndCol;
+        document.querySelector("body").style.backgroundColor = rndCol;
       });
     </script>
   </body>

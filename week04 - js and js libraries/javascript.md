@@ -613,6 +613,44 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
+## First class functions
+
+In JS, functions are first-class objects.
+
+This allows them to be passed as arguments to other functions, or returned as a value from other functions.
+
+```js
+// addEventListener takes handleClick as a function argument
+document.querySelector("button").addEventListener("click", handleClick);
+
+// notice that we do not call handleClick with (), as that will call the function instead
+```
+
+```js
+function foo() {
+  console.log("Hello foo");
+}
+function bar() {
+  return foo;
+}
+bar()(); // "Hello foo"
+
+// bar() returns the function foo
+// we then call the returned function foo using the additional ()
+```
+
+Functions can also be assigned to variables.
+
+```js
+function foo() {
+  console.log("Hello foo");
+}
+const bar = foo;
+bar(); // "Hello foo"
+```
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+
 [x] functions and arrow functions
 [x] objects
 [ ] arrays and array methods
