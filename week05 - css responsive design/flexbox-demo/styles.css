@@ -1,0 +1,36 @@
+.container {
+  border: solid #333 1px;
+  background-color: papayawhip;
+  margin-bottom: 20px; /* space out the 2 containers for better visibility */
+  height: 500px;
+  width: 500px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: darkgreen;
+  border-radius: 20px;
+}
+.box:nth-child(even) {
+  /* make every alternate box a different color */
+  background-color: coral;
+}
+
+section {
+  display: flex;
+}
+article {
+  background-color: sandybrown;
+}
+article:nth-child(even) {
+  background-color: aquamarine;
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+.f-col {
+  display: flex;
+  flex-direction: column;
+}

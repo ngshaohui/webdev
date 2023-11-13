@@ -26,9 +26,6 @@ const savedSettings = {
   },
 };
 
-savedSettings.userSettings.adPreference.showAds.value;
-savedSettings["userSettings"]["adPreference"]["showAds"]["value"];
-
 // q4: set the third element of the array to 27
 const arr = [0, 1, 2, 3, 4, 5];
 

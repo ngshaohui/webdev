@@ -1,6 +1,8 @@
 # NextJS
 
-This module shall be using Next.js 13.
+This module shall be using Next.js 14.
+
+The Create Next App version used shall be v14.0.2
 
 ## Agenda
 
@@ -11,7 +13,7 @@ This module shall be using Next.js 13.
 ## Setting up
 
 ```bash
-npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind
+npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind  --import-alias "@/*"
 ```
 
 https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
@@ -19,16 +21,15 @@ https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
 When prompted to install `create-next-app`, press enter to continue.
 
 ```
-C:\Users\nsh8\Documents>npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind --no-import-alias
+C:\Users\nsh8\Documents>npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind
 Need to install the following packages:
-  create-next-app@13.5.3
+  create-next-app@14.0.2
 Ok to proceed? (y)
-? Would you like to customize the default import alias? » No / Yes
 ```
 
-When prompted to customize the default import alias, press enter to select `no` as the default.
-
 Note that there is no option to select an option for `import-alias` from the terminal, as referenced from the source code.
+
+As such, we define the import alias to be `"@/*"` which is the default value given when "no" is selected.
 
 ### `create-next-app` bootstrapping tool
 
@@ -120,7 +121,7 @@ C:\Users\nsh8\Documents\webdev\temp\my-app>npm run dev
 > my-app@0.1.0 dev
 > next dev
 
-  ▲ Next.js 13.5.3
+  ▲ Next.js 14.0.2
   - Local:        http://localhost:3000
 ```
 
