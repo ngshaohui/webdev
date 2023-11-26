@@ -651,10 +651,4 @@ bar(); // "Hello foo"
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
-[x] functions and arrow functions
-[x] objects
-[ ] arrays and array methods
-[x] destructuring
-[x] template literals
-[x] ternary operators
 [ ] modules and import/export

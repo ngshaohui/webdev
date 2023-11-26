@@ -65,6 +65,12 @@ Common shared UI components:
 
 https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts
 
+## Links
+
+TODO talk about Next.js custom <Link /> component instead of using <a>
+
+TODO talk about client side routing
+
 ## CSS Modules
 
 Next.js comes with CSS Modules.

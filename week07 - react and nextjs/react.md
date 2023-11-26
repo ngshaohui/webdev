@@ -93,7 +93,6 @@ If we want the component to be used somewhere else, we need to export it.
 
 Each component should be a logical grouping of HTML elements.
 
-<!-- prettier-ignore -->
 ```jsx
 function Footer() {
   return (
@@ -101,16 +100,6 @@ function Footer() {
       <p>Released under the MIT License.</p>
       <p>Copyright &copy; 2023-present</p>
     </footer>
-  );
-}
-
-function NavigationBar() {
-  return (
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/topics">Topics</a></li>
-    </ul>
   );
 }
 ```
@@ -173,7 +162,7 @@ function Car(props) {
 export default function App() {
   return (
     <section>
-      <Greet make="Ford" model="Mustang" year={1969} />
+      <Car make="Ford" model="Mustang" year={1969} />
     </section>
   );
 }
@@ -255,6 +244,4 @@ function SchoolHomePage() {
     </>
   );
 }
-
-const hello = <div>Hello!</div>;
 ```
