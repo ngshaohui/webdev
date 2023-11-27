@@ -1,10 +1,26 @@
 # Week 7 hands-on
 
-1. Delete the contents of `globals.css`
+We will continue working on the Next.js application `my-app` which we initialized during the previous week.
 
-2. Ensure that you leave the developer tools Console open.
+## Viewing this hands-on worksheet
 
-## Activity 1: Implement
+To preview this hands-on worksheet in VSCode, do the following:
+
+1. Open this file in VSCode
+
+2. Press ctrl+shift+v to open the preview of this document
+
+## Activity 1: Complete the implementation
+
+Before you start working on the hands-on activities, ensure that you have done the following:
+
+1. Open the `my-app` folder within VSCode
+
+2. Open a terminal within the `my-app` folder and run `npm run dev` to start the development server
+
+3. Delete the contents of `globals.css` (not the file)
+
+4. Ensure that you leave the developer tools Console open in the browser
 
 ### Task 1: Component with props
 
@@ -61,10 +77,11 @@ Replace the code in `app/page.jsx` with the following code:
 import Image from "next/image";
 
 export default function App() {
+  // TODO complete the function
   function handleClick() {
-    // TODO complete the function
     // should show an alert with the cursor's coordinates
     const coordinates = `${-1} ${-1}`;
+    alert(coordinates);
   }
 
   return (
@@ -81,6 +98,7 @@ export default function App() {
 
 Complete the `handleClick` function so that clicking on the image shows an alert with the coordinates of the mouse click.
 Hint: we can get the cursor coordinates by passing an event object to our event handler.
+
 Use `event.nativeEvent.offsetX` to get the X coordinates of the mouse click
 
 ![Desired output for coordinates activity](./hands_on_ss/click_coordinates.png)
@@ -142,5 +160,4 @@ If you do not see a warning message, this happens because there was nothing rend
 
 Activities adapted from the following resources:
 
-- https://fullstackopen.com/en/part1/introduction_to_react#exercises-1-1-1-2
 - https://react.dev/learn/your-first-component
