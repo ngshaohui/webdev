@@ -10,7 +10,7 @@ To preview this hands-on worksheet in VSCode, do the following:
 
 2. Press ctrl+shift+v to open the preview of this document
 
-## Activity 1: Complete the implementation
+## Activity prerequisites
 
 Before you start working on the hands-on activities, ensure that you have done the following:
 
@@ -21,6 +21,8 @@ Before you start working on the hands-on activities, ensure that you have done t
 3. Delete the contents of `globals.css` (not the file)
 
 4. Ensure that you leave the developer tools Console open in the browser
+
+## Activity 1: Complete the implementation
 
 ### Task 1: Component with props
 
@@ -125,11 +127,12 @@ Replace the code in `app/page.jsx` with the following code:
 ```jsx
 export default function Profile() {
   return
-    <h1>The road not taken</h1>;
+    <h1>The road not taken</h1>
+    <h2>Robert Frost</h2>
 }
 ```
 
-Fix the return statement, so that the <h1> element renders on the page.
+Fix the return statement, so that both elements renders on the page.
 
 ### Task 3
 
