@@ -69,6 +69,26 @@ Note that each time we click on the `div`, the value of `clicks` appears to incr
 
 This is because React does not know that we want to update the DOM, even when `clicks` changes.
 
+In vanilla JS, we encounter this problem as well if we just do the following
+
+```js
+let clicks = 0;
+let divElement = document.querySelector("div");
+divElement.addEventListener("click", () => {
+  clicks++;
+});
+```
+
+Instead, we also need to force a DOM update by updating the textContent of the DOM element.
+
+```js
+let clicks = 0;
+divElement.addEventListener("click", () => {
+  clicks++;
+  divElement.textContent = clicks; // update the DOM
+});
+```
+
 ### `useState` to trigger re-renders
 
 In order to tell React to update the DOM when a value changes, we need to use a React hook `useState`.
@@ -156,7 +176,8 @@ setClicks(clicks + 1);
 However, we are not able to call `setClicks(clicks + 1)` sequentially in the same function to increment its value.
 
 ```jsx
-function incrementThrice() { // does not work
+function incrementThrice() {
+  // does not work
   setClicks(clicks + 1); // setClicks(0 + 1)
   setClicks(clicks + 1); // setClicks(0 + 1)
   setClicks(clicks + 1); // setClicks(0 + 1)
@@ -172,7 +193,8 @@ This means that each time `clicks` was being referenced within `incrementThrice`
 Whenever we want to rely on a previous state, we should use a function as the argument instead.
 
 ```jsx
-function incrementThrice() { // does not work
+function incrementThrice() {
+  // does not work
   setClicks((prev) => prev + 1); // setClicks(0 + 1)
   setClicks((prev) => prev + 1); // setClicks(1 + 1)
   setClicks((prev) => prev + 1); // setClicks(2 + 1)
