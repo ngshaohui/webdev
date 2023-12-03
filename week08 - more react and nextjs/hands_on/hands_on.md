@@ -94,6 +94,130 @@ Make sure that `app/about/page.jsx` has one default export.
 
 ![project structure](./hands_on_ss/about.png)
 
+### Task 2: create a navbar
+
+Next, we want to create a navigation bar at the top of our application so that we can easily switch between pages to visit.
+
+We shall do so in `app/layout.jsx`, as we want this navbar to be shared across all our components.
+
+Since we are using the `<Link>` component from Next.js, remember to import it.
+
+```jsx
+import Link from "next/link";
+
+// rest of the code omitted for brevity
+
+function Navbar() {
+  return (
+    <nav>
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+    </nav>
+  );
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+![rudimentary navbar](./hands_on_ss/rudimentary.png)
+
+### Task 3: Making the Navbar its own component
+
+While the navbar needs to be shared across all our pages, it would be unintuitive to search for it in the root layout component whenever we wish to change it.
+
+Let us create a new folder `ui` in the `app` folder.
+
+We shall create our Navbar component there instead by creating a file `app/ui/Navbar.jsx`.
+
+Since this is a component of its own, we will need a default export.
+
+![standalone rudimentary navbar](./hands_on_ss/navbar_component.png)
+
+We can import this in the layout component instead.
+
+```jsx
+import Navbar from "@/app/ui/Navbar";
+
+// other code omitted for brevity
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+Visit our page in the browser to ensure that our app still renders correctly without errors.
+
+In general, reusable UI components will be declared in the `app/ui/` folder where possible, as the `layout.jsx` or `page.jsx` files should ideally only contain code about how to layout the page or app itself.
+
+The convention for component's filenames is to be written in PascalCase, to indicate that they are components and not regular files.
+
+### Task 4: Adding styles to the navbar
+
+Next, let us add styles to the navbar component.
+
+Create a file `app/ui/Navbar.module.css` and populate it with the following CSS:
+
+```css
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navitem {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navitem:hover {
+  background-color: #ddd;
+  color: black;
+}
+```
+
+We can import the styles into our component with an import statement.
+
+```jsx
+import styles from "./Navbar.module.css";
+```
+
+Next, we want to add the styles to the `className` attribute of each relevant component.
+
+![layout of component and css module file](./hands_on_ss/navbar_with_css.png)
+
+In general, we want to co-locate the CSS module file with our pages and components.
+
+E.g. `page.jsx` and `page.module.css` are in the same folder, as are `Navbar.jsx` and `Navbar.module.css`
+
+CSS module files will also be named with the same name as their JSX counterpart (except their extension ends in `.module.css`).
+
+E.g. `Navbar.jsx` will have a CSS module `Navbar.module.css`
+
+### Task 5: Visiting the `/ui` route
+
+Try visiting the `/ui` route in your browser, is it a valid page? Why?
+
+[http://localhost:3000/ui](http://localhost:3000/ui)
+
 ## Activity 3: Create an interactive search
 
 We will continue working on the Next.js application `my-app` which we also worked with last week.
@@ -284,7 +408,12 @@ Hint: `display: none;`
 Hint: CSS classes can be changed conditionally
 
 ```jsx
-<li className={shouldShow ? styles.hide : styles.show}>Charlie Tan</li>
+const shouldShow = false;
+function render() {
+  return (
+    <li className={shouldShow ? styles.show : styles.hide}>Charlie Tan</li>
+  );
+}
 ```
 
 ## Submission
