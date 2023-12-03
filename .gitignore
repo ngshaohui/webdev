@@ -1,4 +1,7 @@
 learn-react/
 temp/
 
+node_modules/
+.next/
+
 .DS_Store

@@ -194,7 +194,7 @@ Whenever we want to rely on a previous state, we should use a function as the ar
 
 ```jsx
 function incrementThrice() {
-  // does not work
+  // works
   setClicks((prev) => prev + 1); // setClicks(0 + 1)
   setClicks((prev) => prev + 1); // setClicks(1 + 1)
   setClicks((prev) => prev + 1); // setClicks(2 + 1)

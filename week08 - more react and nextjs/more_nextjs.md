@@ -19,11 +19,11 @@ The above folder structure will mean that the website has 2 pages:
 
 ### Pages in Next.js
 
-As we do not use HTML files in React.js, the routing needs to be handled by an external library.
+Since we do not use HTML files in React.js, the routing needs to be handled by an external library.
 
-Since we are using the Next.js framework, we can let it take care of the routing for us.
+With the the Next.js framework, this includes functionality that will take care of the routing for us.
 
-Routing for Next.js is handled by creating sub-directories under the `app/` directory, and having
+Routing for Next.js is handled by creating sub-directories under the `app/` directory, and including a `page.jsx` within those directories.
 
 To create a new page, we need to create a new directory within the `app/` directory.
 

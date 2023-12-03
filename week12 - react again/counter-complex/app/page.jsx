@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import styles from "./Counter.module.css";
+import styles from "./page.module.css";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
@@ -28,16 +30,20 @@ export default function Counter() {
   return (
     <div>
       <section>
-        <div className={styles["counter-wrapper"]}>
-          <button id="minus" onClick={handleMinusClick}>
+        <div className={styles.counterWrapper}>
+          <button
+            className={styles.button}
+            id="minus"
+            onClick={handleMinusClick}
+          >
             -
           </button>
           <span id="counter">{counter}</span>
-          <button id="plus" onClick={handlePlusClick}>
+          <button className={styles.button} id="plus" onClick={handlePlusClick}>
             +
           </button>
         </div>
-        <div className={styles["clicks-wrapper"]}>
+        <div className={styles.clicksWrapper}>
           <p>
             Number of page clicks: <span id="clicks">{numClicks}</span>
           </p>

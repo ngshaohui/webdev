@@ -66,6 +66,7 @@ export default function App() {
 ```
 
 Complete the `Show` component, which should take in `show` as a prop.
+
 Hint: we can evaluate JS expressions within the component
 
 ![Desired output for shows activity](./hands_on_ss/shows.png)
@@ -155,7 +156,10 @@ export default function App() {
 ```
 
 Read the warning message, and attempt to fix it.
+
 Hint: How do we differentiate regular HTML elements from JSX components?
+
+Hint: Do you have your console open?
 
 If you do not see a warning message, this happens because there was nothing rendered on the page before you pasted the code in. Try to render `<h1>Hello</h1>` in the `App` component first, before replacing the code again.
 
