@@ -13,7 +13,7 @@ The Create Next App version used shall be v14.0.2
 ## Setting up
 
 ```bash
-npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind  --import-alias "@/*"
+npx create-next-app@14.0.2 my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind  --import-alias "@/*"
 ```
 
 https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
@@ -21,7 +21,7 @@ https://nextjs.org/docs/app/api-reference/create-next-app#non-interactive
 When prompted to install `create-next-app`, press enter to continue.
 
 ```
-C:\Users\nsh8\Documents>npx create-next-app@latest my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind
+C:\Users\nsh8\Documents>npx create-next-app@14.0.2 my-app --js --use-npm --eslint --app --no-src-dir --no-tailwind
 Need to install the following packages:
   create-next-app@14.0.2
 Ok to proceed? (y)

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 function Clicker() {
@@ -8,7 +10,7 @@ function Clicker() {
   return <button onClick={increaseVal}>clicks: {clicks}</button>;
 }
 
-export default function App() {
+export default function CounterRepeated() {
   const [clicks, setClicks] = useState(0); // set initial value to 0
   function handleClick() {
     setClicks((prev) => prev + 1);

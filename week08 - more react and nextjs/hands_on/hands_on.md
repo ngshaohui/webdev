@@ -234,9 +234,8 @@ Before you start working on the hands-on activities, ensure that you have done t
 
 Create a new page for this activity `app/namelist/page.jsx`.
 
-Update your `Navbar` component from Activity 2 to include a link to this page.
-
 ```jsx
+// app/namelist/page.jsx
 export default function App() {
   return (
     <div>
@@ -246,6 +245,8 @@ export default function App() {
 }
 ```
 
+Update your `Navbar` component from Activity 2 to include a link to this page.
+
 View your page on the browser.
 
 This should have created a page with an input element.
@@ -254,7 +255,11 @@ This should have created a page with an input element.
 
 We want to add add an event listener for `keyup` to get our user's text input.
 
+This will require us to use the `"use client"` directive in our component, since we are using event handlers.
+
 ```jsx
+"use client";
+
 export default function App() {
   function handleKeyUp(event) {
     const query = event.target.value;

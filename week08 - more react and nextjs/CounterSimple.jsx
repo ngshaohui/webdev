@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from "react";
 
-export default function App() {
+export default function CounterSimple() {
   const [clicks, setClicks] = useState(0); // set initial value to 0
   function increaseVal() {
     setClicks((prev) => prev + 1);
