@@ -6,12 +6,20 @@
 
 ## Deadline
 
-4th February 2024 (Sunday)
+8th February 2024 (Thursday)
 2359 hours
 
 ## Objectives
 
 To assess a student's ability to implement a web application built using a modern front-end framework.
+
+## Themes
+
+- travel plans
+- movies
+- games
+- books
+- food
 
 ### Features
 
@@ -87,9 +95,15 @@ Propose an additional feature to implement.
 
 - Project demo
 
+2 minute presentation on the page(s) you have contributed to, and what is interesting about it.
+
 #### Individual reflection 5%
 
 - Individual reflection
+
+Reflect on what you have learnt over the course of the project, explaining any design decisions you have made.
+
+You may include things that you have attempted, but excluded from your submission.
 
 #### Additional criteria
 
