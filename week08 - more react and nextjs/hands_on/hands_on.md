@@ -388,7 +388,7 @@ Try making the search case insensitive.
 
 ![names being filtered based on input but case insensitive](./hands_on_ss/filter_insensitive.png)
 
-### (Bonus) Task 7: throttle
+### (Bonus) Task 7: debounce
 
 A consideration for UX designers is to wait for a user to stop typing before updating a display.
 
@@ -396,30 +396,11 @@ We can wait (e.g. 200ms) for the user to stop typing, before displaying the resu
 
 This is one of the ways which we can prevent the display from overwhelming the user with the number of changes.
 
-Add a throttle to the event handler, so that it throttles the display update.
+Add a debounce to the event handler, so that it debounces the display update.
 
 Hint: explore the `setTimeout` function
 
 Hint: alternatively, lodash has a relevant function to handle this
-
-### (Bonus) Task 8: efficient transition
-
-Adding and removing DOM elements are actually more computational expensive and undesired if we just want to update what shows in our list.
-
-Use CSS to hide the elements being filtered, instead of changing what the DOM renders.
-
-Hint: `display: none;`
-
-Hint: CSS classes can be changed conditionally
-
-```jsx
-const shouldShow = false;
-function render() {
-  return (
-    <li className={shouldShow ? styles.show : styles.hide}>Charlie Tan</li>
-  );
-}
-```
 
 ## Submission
 
