@@ -8,7 +8,7 @@
 
 ```jsx
 export default function App() {
-  [count, setCount] = useEffect(0);
+  [count, setCount] = useState(0);
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
