@@ -12,6 +12,8 @@ Visit Google Maps.
 
 https://maps.app.goo.gl/TjDJcuFJTnfGFWBh7
 
+**Turn on the filter for img on the network inspector.**
+
 ![network tab with img filter turned on](./hands_on_ss/network_filter_img.png)
 
 Scroll around the map, and see what requests are being made.
@@ -20,17 +22,23 @@ Scroll around the map, and see what requests are being made.
 
 Visit https://www.reddit.com/r/Jokes/
 
-Change the filter to Fetch/XHR.
+Change the filter to Fetch/XHR instead of img on the network inspector.
+
+![network tab with XHR filter turned on](./hands_on_ss/network_filter_xhr.png)
 
 Scroll to the bottom of the page, and observe the new requests that are being made as new posts are loaded.
 
 ### Task 4: View network activity for Youtube
+
+Continue using the Fetch/XHR for this task.
 
 Visit https://www.youtube.com/
 
 Scroll to the bottom of the page, and observe the new requests that are being made as new videos are loaded.
 
 ### Task 5: View network activity for NP's website
+
+Continue using the Fetch/XHR for this task.
 
 Visit https://www.np.edu.sg/
 
@@ -75,6 +83,8 @@ npm install swr
 For this activity, we will be fetching data from https://freeipapi.com/
 
 ```jsx
+"use client";
+
 import useSWR from "swr";
 
 // use vanilla fetch as fetcher
@@ -86,14 +96,14 @@ export default function App() {
   const { data, error, isLoading } = useSWR(IP_API_URL, fetcher);
 
   if (error) {
-    return <div>failed to load</div>;
+    return <h1>failed to load</h1>;
   }
   if (isLoading) {
-    return <div>loading...</div>;
+    return <h1>loading...</h1>;
   }
 
   // render data
-  return <div>Your IP is {data.ipAddress}</div>;
+  return <h1>Your IP is {data.ipAddress}</h1>;
 }
 ```
 
@@ -109,8 +119,110 @@ Refer to the docs to display more properties in the JSON data being returned:
 
 ## Activity 3: Bootstrap component library
 
-TODO
+For this activity, we will be continuing off what we have built in activity 2.
+
+https://react-bootstrap.netlify.app/
+
+> Note: tasks 1 and 2 references the Introduction section of the React Bootstrap documentation.
+>
+> Feel free to skip the tasks and follow the official documentation instead for a much more comprehensive overview.
+>
+> https://react-bootstrap.netlify.app/docs/getting-started/introduction#installation
+>
+> You are strongly encouraged to practice reading and following official documentation, and feel free to approach your tutor for help if you encounter any difficulty along the way.
+>
+> Otherwise, you can simply follow the instructions in this task for a much more concise set of instructions on what's needed for our activity.
+
+### Task 1: Installation
+
+```bash
+npm install react-bootstrap bootstrap
+```
+
+### Task 2: Importing bootstrap's stylesheets
+
+At the top of `app/globals.css`, add the following:
+
+```css
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+// rest of the globals.css file (this is just a comment, you don't need to copy this...)
+```
+
+This is to import bootstrap's stylesheets, which its components require.
+
+### Task 3: Using React Bootstrap
+
+Since most component libraries do not support server-side rendering, we will need to add the `"use client"` directive to the top of each file which uses it.
+
+To begin with, ensure that the `"use client"` directive is present at the top of `app/page.jsx`.
+
+```jsx
+"use client";
+
+// rest of page.jsx
+```
+
+### Task 4: Adding a Bootstrap spinner
+
+https://react-bootstrap.netlify.app/docs/components/spinners
+
+When using any component, we need to first import it at the top of the file.
+
+```jsx
+// page.jsx
+"use client";
+import Spinner from "react-bootstrap/Spinner";
+
+// rest of page.jsx
+```
+
+Change the `<h1>loading...</h1>` element to the Bootstrap spinner instead.
+
+```jsx
+if (isLoading) {
+  return (
+    <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+  );
+}
+```
+
+Refresh the page to see the spinner in action when your API request is in-flight.
+
+### Task 5: Add the Navbar
+
+https://react-bootstrap.netlify.app/docs/components/navbar
+
+Try adding the Navbar to the `layout.jsx` component.
+
+Remember to add the `"use client"` directive to the top of the files when you want to use the Bootstrap components.
+
+Instead of using `<Nav.Link>` as per their example, change them to use the `<Link>` component from Next.js that you have used in the prior weeks.
+
+Remember to import import the `Link` component in order to use it.
+
+```jsx
+<Nav.Link href="#home">Home</Nav.Link>
+// to
+<Link href="/">Home</Link>
+```
+
+Ensure that all the links to the other pages in your app are working.
 
 ## (Bonus) Activity 4: Using fetch API to fetch data in React
 
 Without using the SWR library, use only the vanilla `fetch` browser API and React's `useEffect` hook to accomplish activity 2.
+
+## Submission
+
+Submit your `my-app` folder which should contain activites 2 and 3.
+
+The tasks marked (bonus) are optional to submit.
+
+Follow the submission criteria from week 7:
+
+1. The `.next/` and `node_modules/` folder should not be included
+2. Make sure to name the zip file with your class, student id, and name
+3. Do not submit unnecessary files such as the powerpoint slides

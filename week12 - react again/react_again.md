@@ -54,9 +54,9 @@ TODO
 
 Component libraries allow us to import ready-made ready-styled React components.
 
-This is similar to how JS libraries provide pre-defined functions we can call, allowing where to apply them without having to implement them from scratch.
+This is similar to how JS libraries provide pre-defined functions we can call, allowing us to apply them without having to implement them from scratch.
 
-With component libraries, we can focus on where to put components, instead of spending time to decide how to style them.
+With component libraries, we can focus on where to put components instead of spending time to decide how to style them.
 
 ## Bootstrap / react-bootstrap
 
