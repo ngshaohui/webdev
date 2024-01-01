@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fetch API</title>
+  </head>
+
+  <body>
+    <div>
+      <input
+        id="word"
+        autocomplete="off"
+        autofocus
+        placeholder="word"
+        type="text"
+      />
+      <button>Get definition</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+      document.querySelector("button").addEventListener(() => {
+        const resDiv = document.querySelector("#result");
+        const word = document.querySelector("#word").value;
+
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+          .then((response) => response.json())
+          .then((data) => {
+            resDiv.textContent = data[0].meanings[0].definitions[0].definition;
+          })
+          .catch(() => {
+            resDiv.textContent = "There was an error.";
+          });
+      });
+    </script>
+  </body>
+</html>
