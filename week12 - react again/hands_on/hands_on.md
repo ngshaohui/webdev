@@ -117,6 +117,18 @@ Refer to the docs to display more properties in the JSON data being returned:
 2. Continent
 3. Time zone
 
+### (Bonus) Task 4: Fetching IP information for specific IP
+
+**(This is a lengthy task, avoid attempting this unless you are done with all the other tasks needed for submission)**
+
+Modify the page to have an input field to allow the user to specify an API.
+
+Modify the request to take in the user specified IP.
+
+Hint: The IP-ADDRESS is an optional parameter, and we have chosen to omit it in our initial implementation.
+
+https://docs.freeipapi.com/request.html
+
 ## Activity 3: Bootstrap component library
 
 For this activity, we will be continuing off what we have built in activity 2.
