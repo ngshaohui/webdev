@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      fetch("https://freeipapi.com/api/json/").then((response) => {
+        if (response.status === 200) {
+          response.json().then((ipData) => {
+            document.querySelector("h1").textContent = ipData.ipAddress;
+          });
+        } else {
+          console.error("Failed to fetch IP data");
+        }
+      });
+    </script>
+  </body>
+</html>
