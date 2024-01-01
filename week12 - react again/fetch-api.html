@@ -17,19 +17,20 @@
     </div>
     <div id="result"></div>
 
-    <script>
+    <script type="module">
       document.querySelector("button").addEventListener(() => {
         const resDiv = document.querySelector("#result");
         const word = document.querySelector("#word").value;
 
-        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-          .then((response) => response.json())
-          .then((data) => {
-            resDiv.textContent = data[0].meanings[0].definitions[0].definition;
-          })
-          .catch(() => {
-            resDiv.textContent = "There was an error.";
-          });
+        try {
+          const response = fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+          );
+          const data = response.json();
+          resDiv.textContent = data[0].meanings[0].definitions[0].definition;
+        } catch (error) {
+          resDiv.textContent = "There was an error.";
+        }
       });
     </script>
   </body>

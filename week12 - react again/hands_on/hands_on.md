@@ -1,6 +1,6 @@
 # Week 12 hands on: fetching data
 
-## Activity 1: fetching with the SWR library
+## Activity 1: fetching with the SWR library in React
 
 Since React has a nuanced way of maintaining state within an application, we can opt to use a library to accomplish our data fetching together with the component state management.
 
@@ -28,21 +28,33 @@ npm install swr
 
 ### Task 2: Using SWR to fetch data
 
+For this activity, we will be fetching data from
+
 ```jsx
 import useSWR from "swr";
 
-function Profile() {
+// use vanilla fetch as fetcher
+// deserialize the fetched data as json
+const fetcher = (...args) => fetch(...args).then(res => res.json())
+
+export default function App() {
   const IP_API_URL = "https://docs.freeipapi.com/request.html";
   const { data, error, isLoading } = useSWR(IP_API_URL, fetcher);
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (error) {
+    return <div>failed to load</div>;
+  }
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
   // render data
-  return <div>hello {data.name}!</div>;
+  return <div>Your IP is {data.ipAddress}</div>;
 }
 ```
 
 ### Task 3: Fetching our IP information
 
-## Activity 2: Fetching in vanilla JS
+## Activity 2: Using fetch API to fetch data in React
+
+## Activity 3: Fetching in vanilla JS
