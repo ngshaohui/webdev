@@ -54,6 +54,8 @@ Static pages (NP's website) also do not fetch new data unlike dynamic pages.
 
 ## Activity 2: fetching with the SWR library in React
 
+We will continue working on the Next.js application `my-app` as we always have.
+
 Since React has a nuanced way of maintaining state within an application, we can opt to use a library to accomplish our data fetching together with the component state management.
 
 https://swr.vercel.app/
@@ -211,14 +213,16 @@ Try adding the Navbar to the `layout.jsx` component.
 
 Remember to add the `"use client"` directive to the top of the files when you want to use the Bootstrap components.
 
-Instead of using `<Nav.Link>` as per their example, change them to use the `<Link>` component from Next.js that you have used in the prior weeks.
+Instead of using `<Nav.Link>` as per their example, you'll need to wrap it in the `<Link>` component from Next.js that you have used in the prior weeks.
 
 Remember to import import the `Link` component in order to use it.
 
 ```jsx
 <Nav.Link href="#home">Home</Nav.Link>
 // to
-<Link href="/">Home</Link>
+<Link href="/" passHref>
+    <Nav.Link>Home</Nav.Link>
+</Link>
 ```
 
 Ensure that all the links to the other pages in your app are working.
