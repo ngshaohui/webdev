@@ -218,7 +218,7 @@ Instead of using `<Nav.Link>` as per their example, you'll need to wrap it in th
 Remember to import import the `Link` component in order to use it.
 
 ```jsx
-<Nav.Link href="#home">Home</Nav.Link>
+<Nav.Link href="/">Home</Nav.Link>
 // to
 <Link href="/" passHref>
     <Nav.Link>Home</Nav.Link>
