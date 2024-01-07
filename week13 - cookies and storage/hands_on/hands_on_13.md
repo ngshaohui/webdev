@@ -88,6 +88,12 @@ For this activity, we shall explore the use of the `useEffect` hook.
 
 Create a page for this in your existing Next.js project, such as the `my-app` application we have been working on for the past few lessons.
 
+### Task 1: Try out useEffect with setTimeout
+
+A common use case of `useEffect` is with timers.
+
+The following code creates a way for us to debounce a button after it has been clicked, to ensure that users do not spam it too many times by disabling it for 2 seconds after clicking.
+
 ```jsx
 "use client";
 
@@ -120,6 +126,64 @@ export default function App() {
 }
 ```
 
+### (Bonus) Task 2: Retrieve and store number of clicks in localStorage
+
+Another common use case for `useEffect` is to read from `localStorage`.
+
+Complete the following code so that:
+
+1. the current number of clicks can be stored in `localStorage`
+
+and
+
+2. the number of clicks is retrieved from `localStorage` when the page is refreshed
+
+```jsx
+"use client";
+
+import { useEffect, useState } from "react";
+
+const DEFAULT_STORAGE_KEY = "clicks";
+
+export default function App() {
+  const [clicks, setClicks] = useState(0);
+  useEffect(
+    () => {
+      // TODO add your code here
+    },
+    [
+      // TODO add dependencies here
+    ]
+  );
+
+  // TODO you may add additional helper functions if needed
+
+  function loadSettings() {
+    const clicksStr = localStorage.getItem(DEFAULT_STORAGE_KEY);
+    const clicks = JSON.parse(clicksStr);
+    return clicks;
+  }
+
+  function saveSettings(settings) {
+    localStorage.setItem(DEFAULT_STORAGE_KEY, JSON.stringify(settings));
+  }
+
+  function handleClick() {
+    setClicks((prev) => prev + 1);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Counter: {clicks}</button>
+    </div>
+  );
+}
+```
+
 ## Submission
 
 Submit this hands-on worksheet. Ensure that you answer all the questions within it (they end with a question mark ?).
+
+You may also include a `.jsx` file of the bonus question if you do attempt it.
+
+You're strongly encouraged to attempt it so that you can learn to use `localStorage` in your project.
