@@ -18,6 +18,8 @@ Since we are using Python's http server, we may access the page via http://local
 
 This application implements a dark mode view, which can be triggered by left-clicking anywhere on the page.
 
+It starts off with light mode by default.
+
 ### Task 1: Viewing the browser storage
 
 Open the Devtool's Application tab and select Local storage from side panel.
@@ -44,13 +46,15 @@ Why does the page's light/dark mode not change immediately when the stored value
 
 (Hint: when does JavaScript get loaded on a page? Which portion of the code has to do with loading the settings for dark mode?)
 
-### (Bonus) Task 4
+### Task 4
 
 Put the page in dark mode, and attempt to do the following on the browser's local storage and observe if the page stays in dark mode.
 
 - Delete the entry and refresh the page.
 - Change the value of the entry to `{"darkMode": ""}` and refresh the page.
-- Change the value of the entry to `{"darkMode": "false"}` and refresh the page.
+- Change the value of the entry to `{"darkMode": "false?"}` and refresh the page.
+
+Which of the above causes the page to change to light mode, and which ones for dark mode?
 
 ## Activity 2: Session storage
 
@@ -77,6 +81,44 @@ Visit [NP's homepage](https://www.np.edu.sg).
 You may view the cookies being stored for the current domain on Google Chrome by going to Devtool's Application tab and selecting Cookies from the side panel.
 
 ![NP website with dark mode (default)](./hands_on_ss/np_dark_mode.png)
+
+## Activity 4: useEffect
+
+For this activity, we shall explore the use of the `useEffect` hook.
+
+Create a page for this in your existing Next.js project, such as the `my-app` application we have been working on for the past few lessons.
+
+```jsx
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [clicked, setClicked] = useState(false);
+  useEffect(() => {
+    if (clicked) {
+      const timer = setTimeout(toggleButton, 2000);
+
+      // cleanup timer
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [clicked]);
+
+  function toggleButton() {
+    setClicked((prev) => !prev);
+  }
+
+  return (
+    <div>
+      <button disabled={clicked} onClick={toggleButton}>
+        {clicked ? "Paused for 2 seconds" : "Click me"}
+      </button>
+    </div>
+  );
+}
+```
 
 ## Submission
 
