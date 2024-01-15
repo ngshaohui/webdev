@@ -224,8 +224,8 @@ This effectively circumvents the CORS restriction since we are now making a requ
 // this code is only meant for illustration purposes (error handling not depicted)
 
 export default function App() {
-  // when the URL path is specified without the domain, requests will be made over the same origin
-  const { data } = useSWR("/api/dictionary");
+  // when the URL path is specified without the domain, requests will be made to the same origin
+  const { data } = useSWR("/api/dictionary", fetcher);
   return <div>{data}</div>;
 }
 ```
@@ -242,6 +242,12 @@ export async function GET(req) {
 ```
 
 # Appendix
+
+## Troubleshooting
+
+When troubleshooting route handlers, it is important to first check the devtools network inspector to see if the requests are being made correctly.
+
+If you see that the server responds with an error, it is worth opening the console where you ran `npm run dev` to check if any errors are shown there.
 
 ## Resolving CORS on the server side
 

@@ -2,11 +2,9 @@
 
 TODO consider putting this on week 12. Week 9 is common test week so it's undesirable to have a deadline, but could perhaps make the deadline week 11 but release it before they go on common test (so week 8).
 
-TODO can also do one for API routes
-
 ## Activity 1
 
-Given the following files, create it within your `my-app` application and check if the Create URL can be visited.
+Given the following files, create it within your `my-app` application and check if the proposed URL can be visited.
 
 ### Task 1
 
