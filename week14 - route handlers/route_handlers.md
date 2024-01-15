@@ -230,7 +230,7 @@ export default function App() {
 }
 ```
 
-`app/api/dictionary`
+`app/api/dictionary/route.js`
 
 ```js
 export async function GET(req) {
