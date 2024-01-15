@@ -5,6 +5,7 @@ export default function App() {
   const [word, setWord] = useState("");
   const [definitions, setDefinitions] = useState([]);
 
+  // TODO check error propogation from events and async pattern
   async function search(event) {
     event.preventDefault();
     setIsLoading(true);

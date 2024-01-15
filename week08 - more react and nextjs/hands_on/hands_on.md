@@ -261,13 +261,13 @@ This will require us to use the `"use client"` directive in our component, since
 "use client";
 
 export default function App() {
-  function handleKeyUp(event) {
+  function handleChange(event) {
     const query = event.target.value;
     console.log(query);
   }
   return (
     <div>
-      <input onKeyUp={handleKeyUp} />
+      <input onChange={handleChange} />
     </div>
   );
 }
@@ -314,13 +314,13 @@ const NAMES = [
 ];
 
 export default function App() {
-  function handleKeyUp(event) {
+  function handleChange(event) {
     const query = event.target.value;
     console.log(query);
   }
   return (
     <div>
-      <input onKeyUp={handleKeyUp} />
+      <input onChange={handleChange} />
       <ul>
         {NAMES.map((name) => {
           return <li key={name}>{name}</li>;
@@ -350,13 +350,13 @@ import { useState } from "react";
 
 export default function App() {
   const [filteredNames, setFilteredNames] = useState(NAMES);
-  function handleKeyUp(event) {
+  function handleChange(event) {
     const query = event.target.value;
     console.log(query);
   }
   return (
     <div>
-      <input onKeyUp={handleKeyUp} />
+      <input onChange={handleChange} />
       <ul>
         {filteredNames.map((name) => {
           return <li key={name}>{name}</li>;
@@ -372,7 +372,7 @@ View your app on the browser and make sure that it doesn't contain any errors.
 ### Task 5: filtering our query
 
 ```jsx
-function handleKeyUp(event) {
+function handleChange(event) {
   const query = event.target.value;
   setFilteredNames(NAMES.filter((name) => name.includes(query)));
 }

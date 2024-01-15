@@ -4,6 +4,8 @@ Start a Python http server within the `hands_on` folder to complete the first 2 
 
 ```bash
 python -m http.server
+# or
+py -m http.server
 ```
 
 When you are done with the activities, you can kill the server with control+c.
@@ -179,6 +181,35 @@ export default function App() {
   );
 }
 ```
+
+#### Double render
+
+When testing your application in development mode, you may notice that the following `useEffect` will run twice despite having no dependencies.
+
+```jsx
+useEffect(() => {
+  console.log("this should only print once?");
+}, []);
+```
+
+This is a result of React's strict mode, which forces component to render twice to ensure that no side effects are present, which is a setting that Next.js 13.4 includes by default.
+
+While it is usually a good practice to check for potential issues early on during development, this can hinder with our tests for retriving an item from local storage.
+
+We can add the `reactStrictMode: false` flag to our `next.config.js` file to disable it during our own tests regarding the local storage.
+
+`next.config.js`
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+};
+
+module.exports = nextConfig;
+```
+
+Remember to re-enable it (by removing the false flag) once you are done conducting your tests.
 
 ## Submission
 
