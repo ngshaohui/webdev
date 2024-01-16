@@ -241,6 +241,62 @@ export async function GET(req) {
 }
 ```
 
+## API keys
+
+When calling external APIs, some of them require some form of authentication to use their service.
+
+A common way to accomplish this is through the use of API keys, which is a unique string generated for each user of the service.
+
+However, it is generally not a good idea to expose the API key on the client side. Services like Google will allow the API key to be restricted to particular domains (whitelisting), but most APIs do not employ such practices.
+
+### Hiding your API key
+
+The API key can be hidden by relegating it to the route handler instead.
+
+In Next.js, sensitive information such as API keys should be stored in the `.env.*` (such as the `.env.local`) file, which will be loaded into and accessible through the environment variables.
+
+This file is usually specified in the `.gitignore` file so that credentials are not committed to the codebase.
+
+`.env.local`
+
+```
+SENSITIVE_API_KEY=4NU4F
+```
+
+`app/api/animals/route.js`
+
+```js
+export async function GET(req) {
+  const res = await fetch(URL, {
+    headers: {
+      AccountKey: process.env.SENSITIVE_API_KEY,
+    },
+  });
+  const data = await res.json();
+
+  return Response.json(data);
+}
+```
+
+`app/animals/page.jsx`
+
+```jsx
+// unrelated code has been omitted for brevity
+// this code is only meant for illustration purposes (error handling not depicted)
+
+export default function App() {
+  // when the URL path is specified without the domain, requests will be made to the same origin
+  const { data } = useSWR("/api/animals", fetcher);
+  return <div>{data}</div>;
+}
+```
+
+### Google maps
+
+Since Google APIs allow domain whitelisting, the API key for Google Maps is often embedded in the page's source itself.
+
+However, you should ensure that you whitelist your own domains so that others do not misuse your API key.
+
 # Appendix
 
 ## Troubleshooting

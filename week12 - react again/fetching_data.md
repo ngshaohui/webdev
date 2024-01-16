@@ -8,6 +8,10 @@ Since we are choosing specific resources to fetch instead of a whole page, this 
 
 ## fetch
 
+The `fetch` JavaScript API can be used to fetch data in JavaScript, and is intended to replace `XMLHttpRequest`.
+
+https://developer.mozilla.org/en-US/docs/Web/API/fetch
+
 ### await
 
 ```html
@@ -106,12 +110,6 @@ Another popular format to receive data is in XML, which is what the X in AJAX st
 ```
 
 However, it has since declined in popularity with developers preferring to work with the JSON format.
-
-## Fetch
-
-The `fetch` API is a much more modern way to fetch data.
-
-https://developer.mozilla.org/en-US/docs/Web/API/fetch
 
 # Appendix
 
