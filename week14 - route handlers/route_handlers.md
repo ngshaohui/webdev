@@ -205,8 +205,6 @@ In our example, the server running on `localhost` has not listed `stackoverflow.
 
 As such, the browser chooses to abort the request by raising an error, and reporting that it is unable to perform the request due to CORS restrictions.
 
-This is a desirable behaviour for security reasons, since this prevents malicious websites from trying to request from resources running locally on our own machines, such as the webserver we are running with NextJS.
-
 ### Working with CORS
 
 The CORS restriction is implemented by our browser as a security feature, and we should not be trying to work against it by disabling it.
