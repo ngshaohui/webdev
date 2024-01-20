@@ -39,7 +39,7 @@ By the end of the module, students should have a good understanding of the anato
 | 16   | TBC                              | Consultation                                            |
 | 17   |                                  | Presentation                                            |
 
-No lesson on whitespace weeks, but might have simple assignment for week 5.
+No in-person lesson on whitespace weeks.
 
 ## Components
 
@@ -58,11 +58,4 @@ No lesson on whitespace weeks, but might have simple assignment for week 5.
 
 ## TODO
 
-- data fetching, finish up
 - import/export modules (cover this before react)
-- slides for week08 react and nextjs
-- slides for week12 react
-
-- js
-need to move some js topics from week 4 to 3
-
