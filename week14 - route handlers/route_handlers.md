@@ -27,6 +27,18 @@ The route above can be accessed via the url `/api/hello` through a `GET` request
 
 http://localhost:3000/api/hello
 
+```jsx
+// unrelated code has been omitted for brevity
+// this code is only meant for illustration purposes (error handling not depicted)
+
+export async function App() {
+  // when the URL path is specified without the domain
+  // requests will be made to the same origin
+  const { data } = useSWR("/api/animals", fetcher);
+  return <div>{data}</div>;
+}
+```
+
 ## Making a request to the route handler
 
 By default, starting our application locally will host it on the domain `localhost` and on port `3000`.
@@ -302,6 +314,12 @@ However, you should ensure that you whitelist your own domains so that others do
 When troubleshooting route handlers, it is important to first check the devtools network inspector to see if the requests are being made correctly.
 
 If you see that the server responds with an error, it is worth opening the console where you ran `npm run dev` to check if any errors are shown there.
+
+## Caching
+
+The result from the route handlers are cached by default when using the GET method with the Response object.
+
+https://nextjs.org/docs/app/building-your-application/routing/route-handlers#behavior
 
 ## Resolving CORS on the server side
 
