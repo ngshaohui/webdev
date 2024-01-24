@@ -124,7 +124,7 @@ In our example above, the only thing that changes is the last word in the URL it
 
 We can instead create an API route for just the greeting functionality, and access the last part in the URL which is referred to as the slug.
 
-`app/api/greeting/route.js` (note that we have shortened our route handler path)
+`app/api/greeting/[slug]/route.js` (note that we have shortened our route handler path)
 
 ```js
 export async function GET(request, { params }) {
