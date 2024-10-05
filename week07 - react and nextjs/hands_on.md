@@ -24,12 +24,68 @@ Before you start working on the hands-on activities, ensure that you have done t
 
 ## Activity 1: Complete the implementation
 
-### Task 1: Component with props
+### Task 1: Component to prevent code repetition
+
+Below shows a component which shows a list of 4 people, made up of a `<div>` with 3 nested `<p>` elements.
+
+The layout of each `div` is similar so there is a lot of repetition.
+
+Each time a new person needs to be added, there is a lot of code being copy and pasted.
+
+In such situations we create a standardized component to be reused.
+
+```jsx
+function People() {
+  return (
+    <>
+      <div>
+        <p>Hi my name is Allen</p>
+        <p>I love games</p>
+        <p>My favourite food is pancakes</p>
+      </div>
+      <div>
+        <p>Hi my name is Bart</p>
+        <p>I love music</p>
+        <p>My favourite food is waffles</p>
+      </div>
+      <div>
+        <p>Hi my name is Charlie</p>
+        <p>I love games</p>
+        <p>My favourite food is waffles</p>
+      </div>
+      <div>
+        <p>Hi my name is David</p>
+        <p>I love pentesting</p>
+        <p>My favourite food is pancakes</p>
+      </div>
+    </>
+  );
+}
+```
+
+Create a component `<Person>` that takes in 3 parameters `name`, `interest`, and `favFood`.
+
+```jsx
+// TODO: create Person component
+
+function People() {
+  return (
+    <>
+      <Person name="Allen" interest="games" favFood="pancakes" />
+      <Person name="Bart" interest="music" favFood="waffles" />
+      <Person name="Charlie" interest="games" favFood="waffles" />
+      <Person name="David" interest="pentesting" favFood="pancakes" />
+    </>
+  );
+}
+```
+
+### Task 2: Component with props
 
 Replace the code in `app/page.jsx` with the following code:
 
 ```jsx
-// TODO complete the Show component
+// TODO: complete the Show component
 function Show() {
   return (
     <div>
@@ -71,7 +127,7 @@ Hint: we can evaluate JS expressions within the component
 
 ![Desired output for shows activity](./hands_on_ss/shows.png)
 
-### Task 2: Event listeners
+### Task 3: Event listeners
 
 Replace the code in `app/page.jsx` with the following code:
 
