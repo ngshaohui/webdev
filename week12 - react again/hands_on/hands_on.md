@@ -217,12 +217,28 @@ Instead of using `<Nav.Link>` as per their example, you'll need to wrap it in th
 
 Remember to import import the `Link` component in order to use it.
 
+TODO check if Link component can work, vaguely recall something about it being broken
+
 ```jsx
 <Nav.Link href="/">Home</Nav.Link>
 // to
 <Link href="/" passHref>
     <Nav.Link>Home</Nav.Link>
 </Link>
+```
+
+TODO add warning about not replacing their entire layout js
+
+```jsx
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        {children}
+      </body>
+    </html>
+  )
+}
 ```
 
 Ensure that all the links to the other pages in your app are working.
