@@ -121,6 +121,57 @@ Here are some commonly used elements you're likely to encounter:
 - `input`
 - `table`
 
+### Semantic HTML elements
+
+https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html
+
+Different HTML elements may also perform the same function, making it confusing when to use which.
+
+For example, using the `article` and `section` elements has the same outcome as grouping elements with a `div`.
+
+However, this does not mean that we should use them interchangeably.
+
+In general, `div` elements are the de facto choice to separate content into groups, but the `div` element usually fails to describe why the grouping was made.
+
+```html
+<div>
+  <h1>My Cat</h1>
+  <div>My is called Lucy</div>
+  <div>My cat is fat</div>
+  <div>My cat likes to sleep</div>
+</div>
+```
+
+We should use the element that best describes its purpose and intent, in order to give our HTML code semantic meaning.
+
+For instance, using the `article` element denotes an independent piece of information.
+
+```html
+<article>
+  <h1>My Cat</h1>
+  <div>My is called Lucy</div>
+  <div>My cat is fat</div>
+  <div>My cat likes to sleep</div>
+</article>
+```
+
+Instead of using the `div` elements, the example can be further improved by using another element.
+
+```html
+<article>
+  <h1>My Cat</h1>
+  <section>My is called Lucy</section>
+  <section>My cat is fat</section>
+  <section>My cat likes to sleep</section>
+</article>
+```
+
+At a single glance, we can immediately reason that the article has 3 sections conveying clarity in our intent of grouping the elements together.
+
+Do note that all 3 variants of the example will render the same thing, but the last one has best readability.
+
+However, it should also be noted that there is no **correct** element in all the situations, just which one conveys the meaning best. This means that it is inevitable that people will have different rationales for using different elements, whichever they feel convey the most semantic meaning.
+
 ## Lists
 
 We can use lists to denote a series of items.
