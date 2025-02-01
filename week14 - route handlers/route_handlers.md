@@ -27,15 +27,42 @@ The route above can be accessed via the url `/api/hello` through a `GET` request
 
 http://localhost:3000/api/hello
 
+When visiting the page, we should see the string `Hello world!` displayed as returned from the route handler.
+
+### A route handler that returns JSON
+
+Since most APIs are return JSON data, we can use that instead of simply returning text as per the previous example.
+
+In this example, we shall create a different route
+
+`app/api/animals/route.js`
+
+```js
+export async function GET(request) {
+  return new Response.json({
+    species: ["birds", "bears", "elephants"],
+  });
+}
+```
+
 ```jsx
 // unrelated code has been omitted for brevity
 // this code is only meant for illustration purposes (error handling not depicted)
+// refer to week 12 content for working with error and isLoading
 
 export async function App() {
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // when the URL path is specified without the domain
   // requests will be made to the same origin
   const { data } = useSWR("/api/animals", fetcher);
-  return <div>{data}</div>;
+  // we expect data to contain {species: ["birds", "bears", "elephants"]}
+  return (
+    <ul>
+      {data.species.map((animal) => (
+        <li>{animal}</li>
+      ))}
+    </ul>
+  );
 }
 ```
 
