@@ -33,13 +33,13 @@ When visiting the page, we should see the string `Hello world!` displayed as ret
 
 Since most APIs are return JSON data, we can use that instead of simply returning text as per the previous example.
 
-In this example, we shall create a different route
+In this example, we shall create a different route.
 
 `app/api/animals/route.js`
 
 ```js
 export async function GET(request) {
-  return new Response.json({
+  return Response.json({
     species: ["birds", "bears", "elephants"],
   });
 }
@@ -129,7 +129,7 @@ And we implemented each one of these routes separately:
 
 ```js
 export async function GET(request) {
-  return new Response.json({ greeting: "hello" });
+  return Response.json({ greeting: "hello" });
 }
 ```
 
@@ -137,7 +137,7 @@ export async function GET(request) {
 
 ```js
 export async function GET(request) {
-  return new Response.json({ greeting: "goodbye" });
+  return Response.json({ greeting: "goodbye" });
 }
 ```
 
@@ -156,7 +156,7 @@ We can instead create an API route for just the greeting functionality, and acce
 ```js
 export async function GET(request, { params }) {
   const slug = params.slug;
-  return new Response.json({ greeting: slug });
+  return Response.json({ greeting: slug });
 }
 ```
 
