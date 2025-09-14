@@ -4,10 +4,13 @@
 
 `useEffect` is a hook that is used to introduce side effects into our components.
 
+Since `useEffect` is a hook, we need to **declare it at the top level of the component** (as with other component hooks such as `useState`).
+
 `SideEffect.jsx`
 
 ```jsx
 export default function App() {
+  // useState and useEffect needs to be at the very start
   [count, setCount] = useState(0);
   useEffect(() => {
     // Update the document title using the browser API

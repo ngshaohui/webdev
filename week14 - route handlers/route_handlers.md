@@ -110,7 +110,7 @@ From the browser's devtools console, you can try to make a `POST` request instea
 Ensure that your browser has already navigated to http://localhost:3000 before attempting the fetch request.
 
 ```js
-const res = await fetch("http://localhost:3000/api/hello", { method: "POST" });
+const res = await fetch("/api/hello", { method: "POST" });
 ```
 
 ## Slugs

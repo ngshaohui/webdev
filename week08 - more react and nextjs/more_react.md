@@ -93,24 +93,27 @@ divElement.addEventListener("click", () => {
 
 In order to tell React to update the DOM when a value changes, we need to use a React hook `useState`.
 
+Since `useState` is a hook, we need to **declare it at the top level of the component**.
+
 `CounterSimple.jsx`
 
 ```jsx
 import { useState } from "react";
 
 export default function App() {
-  const [clicks, setClicks] = useState(0); // set initial value to 0
+  // useState needs to be at the very start
+  const [val, setVal] = useState(0); // set initial value to 0
   function increaseVal() {
-    setClicks((prev) => prev + 1);
+    setVal((prev) => prev + 1);
   }
   function reset() {
-    setClicks(0);
+    setVal(0);
   }
   return (
     <div>
       <button onClick={increaseVal}>increment</button>
       <button onClick={reset}>reset</button>
-      clicks: {clicks}
+      val: {val}
     </div>
   );
 }
